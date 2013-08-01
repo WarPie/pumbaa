@@ -1,12 +1,16 @@
 {$I mathematics\fix.pas}
 {$I mathematics\convert.pas}
 {$I mathematics\random.pas}
+{$I mathematics\range.pas}
 {$I mathematics\distance.pas}
 {$I mathematics\angle.pas}
 {$I mathematics\difference.pas}
 {$I mathematics\in.pas}
 {$I mathematics\opposite.pas}
 {$I mathematics\negative.pas}
+{$I mathematics\compare.pas}
+{$I mathematics\sign.pas}
+{$I mathematics\percent.pas}
 
 procedure AddMathFunctions;
 begin
@@ -37,5 +41,19 @@ begin
   AddFunction(@OppositeE, 'function pp_Opposite(e: Extended): Extended; overload;');
   // negative
   AddFunction(@Negative, 'function pp_Negative(i: Integer): Integer;');
-  AddFunction(@NegativeE, 'function pp_NegativeE(e: Extended): Extended; overload;');
+  AddFunction(@NegativeE, 'function pp_Negative(e: Extended): Extended; overload;');
+  // compare
+  AddFunction(@Compare, 'function pp_Compare(v, x: Integer): Integer;');
+  AddFunction(@CompareE, 'function pp_Compare(v, x: Extended): Integer; overload;');
+  // sign
+  AddFunction(@Sign, 'function pp_Sign(x: Integer): Integer;');
+  AddFunction(@SignE, 'function pp_Sign(x: Extended): Integer; overload;');
+  // range
+  AddFunction(@InRange, 'function pp_InRange(value, aFrom, aTo: Integer): Boolean;');
+  AddFunction(@InRangeE, 'function pp_InRange(value, aFrom, aTo: Extended): Boolean; overload;');
+  AddFunction(@EnsureRange, 'procedure pp_EnsureRange(var val: Integer; aFrom, aTo: Integer);');
+  AddFunction(@EnsureRangeE, 'procedure pp_EnsureRangeE(var val: Extended; aFrom, aTo: Extended); overload;');
+  // percent
+  AddFunction(@Percent, 'function pp_Percent(position, source: Extended): Extended;');
+  AddFunction(@Percentage, 'function pp_Percentage(percent, source: Extended): Extended;');
 end;
