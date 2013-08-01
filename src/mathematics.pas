@@ -1,5 +1,7 @@
 {$I mathematics\fix.pas}
 {$I mathematics\convert.pas}
+{$I mathematics\increase.pas}
+{$I mathematics\decrease.pas}
 {$I mathematics\random.pas}
 {$I mathematics\range.pas}
 {$I mathematics\distance.pas}
@@ -21,10 +23,22 @@ begin
   AddFunction(@Degrees, 'function pp_Degrees(x: Extended; method: TAngleMethod): Extended;');
   AddFunction(@Radians, 'function pp_Radians(x: Extended; method: TAngleMethod): Extended;');
   AddFunction(@Compass, 'function pp_Compass(x: Extended; method: TAngleMethod): Extended;');
+  // increase
+  AddFunction(@Increase, 'function pp_Increase(var x: Integer): Integer;');
+  AddFunction(@IncreaseE, 'function pp_Increase(var x: Extended): Extended; overload;');
+  AddFunction(@IncreaseEx, 'function pp_Increase(var x: Integer; N: Integer): Integer; overload;');
+  AddFunction(@IncreaseEEx, 'function pp_Increase(var x: Extended; N: Extended): Extended; overload;');
+  // decrease
+  AddFunction(@Decrease, 'function pp_Decrease(var x: Integer): Integer;');
+  AddFunction(@DecreaseE, 'function pp_Decrease(var x: Extended): Extended; overload;');
+  AddFunction(@DecreaseEx, 'function pp_Decrease(var x: Integer; N: Integer): Integer; overload;');
+  AddFunction(@DecreaseEEx, 'function pp_Decrease(var x: Extended; N: Extended): Extended; overload;');
   // random
   AddFunction(@RandomBool, 'function pp_RandomBool: Boolean;');
   AddFunction(@RandomBoolEx, 'function pp_RandomBool(chance: Integer): Boolean; overload;');
   AddFunction(@Random2, 'function pp_Random(range: Integer): Integer;');
+  AddFunction(@RandomRangeEx, 'procedure pp_RandomRangeEx(aFrom, aTo, amount: Integer; duplicates: Boolean; var output: TIntegerArray);');
+  AddFunction(@RandomEx, 'procedure pp_RandomEx(range, amount: Integer; duplicates: Boolean; var output: TIntegerArray);');
   // distance
   AddFunction(@Distance, 'function pp_Distance(pt1, pt2: TPoint; method: TDistanceMethod): Extended;');
   // angle
