@@ -1,3 +1,4 @@
+{$I point\sort.pas}
 {$I point\floodfill.pas}
 {$I point\split.pas}
 {$I point\group.pas}
@@ -8,12 +9,17 @@
 {$I point\center.pas}
 {$I point\extract.pas}
 {$I point\filter.pas}
+{$I point\invert.pas}
+{$I point\edge.pas}
 
 procedure AddPointFunctions;
 begin
+  // sort
+  AddFunction(@TPASortByRow, 'procedure pp_TPASortByRow(var TPA: TPointArray);');
+  AddFunction(@TPASortByColumn, 'procedure pp_TPASortByColumn(var TPA: TPointArray);');
   // floodfill
-  AddFunction(@TPAFloodFill, 'procedure pp_TPAFloodFill(TPA: TPointArray; start: TPoint; FF8W: Boolean; var output: TPointArray);');
-  AddFunction(@TPAFloodFillEx, 'procedure pp_TPAFloodFill(TPA: TPointArray; start: TPoint; FF8W: Boolean; area: TBox; var output: TPointArray); overload;');
+  AddFunction(@TPAFloodFill, 'procedure pp_TPAFloodFill(TPA: TPointArray; start: TPoint; scan: TScanDirections; var output: TPointArray);');
+  AddFunction(@TPAFloodFillEx, 'procedure pp_TPAFloodFill(TPA: TPointArray; start: TPoint; scan: TScanDirections; area: TBox; var output: TPointArray); overload;');
   // split
   AddFunction(@TPASplit4, 'procedure pp_TPASplit(TPA: TPointArray; dist: Extended; var output: T2DPointArray);');
   AddFunction(@TPASplit3, 'procedure pp_TPASplit(TPA: TPointArray; dist: Extended; method: TDistanceMethod; var output: T2DPointArray); overload;');
@@ -71,4 +77,9 @@ begin
   AddFunction(@TPAFilterNearbyPointsEx3, 'procedure pp_TPAFilterNearbyPoints(var TPA: TPointArray; targets: TPointArray; minDist, maxDist: Extended; method: TDistanceMethod); overload;');
   AddFunction(@TPAFilterNearbyPointsEx2, 'procedure pp_TPAFilterNearbyPoints(var TPA: TPointArray; targets: TPointArray; minDist, maxDist: Extended; rounding: TRoundingMethod); overload;');
   AddFunction(@TPAFilterNearbyPointsEx, 'procedure pp_TPAFilterNearbyPoints(var TPA: TPointArray; targets: TPointArray; minDist, maxDist: Extended; method: TDistanceMethod; rounding: TRoundingMethod); overload;');
+  // invert
+  AddFunction(@TPAInvert, 'procedure pp_TPAInvert(var TPA: TPointArray);');
+  // edge
+  AddFunction(@TPAEdge, 'procedure pp_TPAEdge(var TPA: TPointArray);');
+  AddFunction(@TPAEdgeEx, 'procedure pp_TPAEdge(var TPA: TPointArray; scan: TScanDirections); overload;');
 end;

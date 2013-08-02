@@ -4,7 +4,7 @@
     <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="125">
+    <Units Count="128">
       <Unit0>
         <Filename Value="pumbaa.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -13,8 +13,8 @@
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
         <TopLine Value="122"/>
-        <CursorPos X="58" Y="15"/>
-        <UsageCount Value="103"/>
+        <CursorPos X="35" Y="136"/>
+        <UsageCount Value="105"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -28,10 +28,10 @@
       <Unit2>
         <Filename Value="src\point.pas"/>
         <UnitName Value="point"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="58" Y="15"/>
+        <TopLine Value="8"/>
+        <CursorPos X="58" Y="22"/>
         <UsageCount Value="22"/>
         <Loaded Value="True"/>
       </Unit2>
@@ -46,10 +46,10 @@
       <Unit4>
         <Filename Value="src\global.pas"/>
         <UnitName Value="global"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="9"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="58"/>
-        <CursorPos X="24" Y="70"/>
+        <TopLine Value="73"/>
+        <CursorPos X="53" Y="94"/>
         <UsageCount Value="25"/>
         <Loaded Value="True"/>
       </Unit4>
@@ -432,7 +432,7 @@
       <Unit52>
         <Filename Value="src\point\split.pas"/>
         <UnitName Value="split"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="8"/>
         <WindowIndex Value="0"/>
         <TopLine Value="81"/>
         <CursorPos X="54" Y="109"/>
@@ -450,9 +450,9 @@
       <Unit54>
         <Filename Value="src\point\group.pas"/>
         <UnitName Value="group"/>
-        <EditorIndex Value="8"/>
+        <EditorIndex Value="10"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="14"/>
+        <TopLine Value="83"/>
         <CursorPos X="37" Y="105"/>
         <UsageCount Value="15"/>
         <Loaded Value="True"/>
@@ -492,10 +492,12 @@
       <Unit59>
         <Filename Value="src\point\floodfill.pas"/>
         <UnitName Value="floodfill"/>
+        <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="1" Y="1"/>
+        <CursorPos X="1" Y="125"/>
         <UsageCount Value="11"/>
+        <Loaded Value="True"/>
       </Unit59>
       <Unit60>
         <Filename Value="src\array\strike.pas"/>
@@ -756,9 +758,9 @@
       <Unit92>
         <Filename Value="src\mathematics.pas"/>
         <UnitName Value="mathematics"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="7"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
+        <TopLine Value="40"/>
         <CursorPos X="30" Y="7"/>
         <UsageCount Value="17"/>
         <Loaded Value="True"/>
@@ -774,10 +776,10 @@
       <Unit94>
         <Filename Value="src\mathematics\distance.pas"/>
         <UnitName Value="distance"/>
-        <EditorIndex Value="9"/>
+        <EditorIndex Value="13"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="18"/>
-        <CursorPos X="49" Y="40"/>
+        <TopLine Value="1"/>
+        <CursorPos X="66" Y="31"/>
         <UsageCount Value="11"/>
         <Loaded Value="True"/>
       </Unit94>
@@ -816,9 +818,9 @@
       <Unit99>
         <Filename Value="src\point\from.pas"/>
         <UnitName Value="from"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="207"/>
+        <TopLine Value="194"/>
         <CursorPos X="32" Y="233"/>
         <UsageCount Value="16"/>
         <Loaded Value="True"/>
@@ -1010,9 +1012,9 @@
       <Unit123>
         <Filename Value="src\point\extract.pas"/>
         <UnitName Value="extract"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="5"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="104"/>
+        <TopLine Value="65"/>
         <CursorPos X="8" Y="119"/>
         <UsageCount Value="11"/>
         <Loaded Value="True"/>
@@ -1020,18 +1022,48 @@
       <Unit124>
         <Filename Value="src\point\filter.pas"/>
         <UnitName Value="filter"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="6"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="125"/>
+        <TopLine Value="68"/>
         <CursorPos X="28" Y="138"/>
         <UsageCount Value="11"/>
         <Loaded Value="True"/>
       </Unit124>
+      <Unit125>
+        <Filename Value="src\point\sort.pas"/>
+        <UnitName Value="sort"/>
+        <EditorIndex Value="11"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="79"/>
+        <CursorPos X="27" Y="66"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit125>
+      <Unit126>
+        <Filename Value="src\point\invert.pas"/>
+        <UnitName Value="invert"/>
+        <EditorIndex Value="12"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="4"/>
+        <CursorPos X="12" Y="16"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit126>
+      <Unit127>
+        <Filename Value="src\point\edge.pas"/>
+        <UnitName Value="edge"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="2"/>
+        <CursorPos X="12" Y="81"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit127>
     </Units>
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="7" HistoryIndex="6">
+    <JumpHistory Count="8" HistoryIndex="7">
       <Position1>
         <Filename Value="pumbaa.lpr"/>
         <Caret Line="22" Column="30" TopLine="1"/>
@@ -1060,6 +1092,10 @@
         <Filename Value="src\point\from.pas"/>
         <Caret Line="3" Column="90" TopLine="1"/>
       </Position7>
+      <Position8>
+        <Filename Value="src\point\edge.pas"/>
+        <Caret Line="78" Column="18" TopLine="50"/>
+      </Position8>
     </JumpHistory>
   </ProjectSession>
   <EditorMacros Count="0"/>

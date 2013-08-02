@@ -33,6 +33,14 @@ type
 type
   TRoundingMethod = (rm_None, rm_Round, rm_Floor, rm_Ceil, rm_Trunc);
 
+  {==============================================================================]
+    @action: Type for scanning directions.. Useful for TPA floodfill/edge functions!
+    @note: sd4Ways = 4-way direction scan | sd8Ways = 8-way direction scan.
+    @contributors: Janilabo, slacky
+  [==============================================================================}
+type
+  TScanDirections = (sd4Ways, sd8Ways);
+
 {==============================================================================]
   @action: Used for sorting arrays!
   @note: None
@@ -83,6 +91,7 @@ begin
   AddType('TDistanceMethod', '(dm_Euclidean, dm_Euclidean2, dm_Manhattan, dm_Chebyshev);');
   AddType('TAngleMethod', '(am_Degrees, am_Radians, am_Compass);');
   AddType('TRoundingMethod', '(rm_None, rm_Round, rm_Floor, rm_Ceil, rm_Trunc);');
+  AddType('TScanDirections', '(sd4Ways, sd8Ways);');
   AddType('TSortOrder', '(so_LowToHigh, so_HighToLow);');
   AddType('TSortAlgorithm', '(sa_BubbleSort, sa_OptimizedBubbleSort,' + #32 +
                              'sa_HeapSort, sa_InsertionSort, sa_ShellSort,' + #32 +
