@@ -1,22 +1,25 @@
 {$I point\sort.pas}
+{$I point\unique.pas}
 {$I point\floodfill.pas}
 {$I point\split.pas}
 {$I point\group.pas}
 {$I point\from.pas}
 {$I point\step.pas}
 {$I point\value.pas}
-{$I point\density.pas}
-{$I point\center.pas}
+{$I point\calculation.pas}
 {$I point\extract.pas}
 {$I point\filter.pas}
 {$I point\invert.pas}
 {$I point\edge.pas}
+{$I point\grid.pas}
 
 procedure AddPointFunctions;
 begin
   // sort
   AddFunction(@TPASortByRow, 'procedure pp_TPASortByRow(var TPA: TPointArray);');
   AddFunction(@TPASortByColumn, 'procedure pp_TPASortByColumn(var TPA: TPointArray);');
+  // unique
+  AddFunction(@TPAUnique, 'procedure pp_TPAUnique(var TPA: TPointArray);');
   // floodfill
   AddFunction(@TPAFloodFill, 'procedure pp_TPAFloodFill(TPA: TPointArray; start: TPoint; scan: TScanDirections; var output: TPointArray);');
   AddFunction(@TPAFloodFillEx, 'procedure pp_TPAFloodFill(TPA: TPointArray; start: TPoint; scan: TScanDirections; area: TBox; var output: TPointArray); overload;');
@@ -51,9 +54,9 @@ begin
   AddFunction(@TPAXValues, 'procedure pp_TPAXValues(TPA: TPointArray; var output: TIntegerArray);');
   AddFunction(@TPAYValues, 'procedure pp_TPAYValues(TPA: TPointArray; var output: TIntegerArray);');
   AddFunction(@TPASwapValues, 'procedure pp_TPASwapValues(var TPA: TPointArray);');
-  // density
+  // calculation
   AddFunction(@TPADensity, 'function pp_TPADensity(TPA: TPointArray): Extended;');
-  // center
+  AddFunction(@TPAMean, 'function pp_TPAMean(TPA: TPointArray): TPoint;');
   AddFunction(@TPACenter, 'function pp_TPACenter(TPA: TPointArray): TPoint;');
   // extract
   AddFunction(@TPAExtractBoxes, 'procedure pp_TPAExtractBoxes(var TPA: TPointArray; boxes: TBoxArray);');
@@ -82,4 +85,8 @@ begin
   // edge
   AddFunction(@TPAEdge, 'procedure pp_TPAEdge(var TPA: TPointArray);');
   AddFunction(@TPAEdgeEx, 'procedure pp_TPAEdge(var TPA: TPointArray; scan: TScanDirections); overload;');
+  // grid
+  AddFunction(@TPAGrid, 'procedure pp_TPAGrid(startPoint: TPoint; rows, columns, rowSpace, columnSpace: Integer; var output: TPointArray);');
+  AddFunction(@TPARow, 'procedure pp_TPARow(startPoint: TPoint; rows, rowSpace: Integer; var output: TPointArray);');
+  AddFunction(@TPAColumn, 'function pp_TPAColumn(startPoint: TPoint; columns, columnSpace: Integer): TPointArray;');
 end;

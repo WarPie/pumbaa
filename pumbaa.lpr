@@ -82,6 +82,7 @@ end;
 {$I src\mathematics.pas}
 {$I src\sorting.pas}
 {$I src\array.pas}
+{$I src\integer.pas}
 {$I src\point.pas}
 
 function GetTypeCount(): Integer; callconv export;
@@ -101,6 +102,7 @@ begin
     AddMathFunctions;
     AddSortingFunctions;
     AddArrayFunctions;
+    AddIntegerFunctions;
     AddPointFunctions;
     functionsExported := True;
   end;
