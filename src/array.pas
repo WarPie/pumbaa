@@ -29,6 +29,8 @@
 {$I array\partition.pas}
 {$I array\extractevery.pas}
 {$I array\filterevery.pas}
+{$I array\random.pas}
+{$I array\swap.pas}
 {$I array\merge.pas}
 {$I array\size.pas}
 {$I array\clean.pas}
@@ -674,6 +676,43 @@ begin
   AddFunction(@EqualsATCA, 'function pp_Equals(arr1, arr2: T2DCharArray): Boolean; overload;');
   AddFunction(@EqualsATBoA, 'function pp_Equals(arr1, arr2: T2DBoolArray): Boolean; overload;');
   AddFunction(@EqualsATBA, 'function pp_Equals(arr1, arr2: T2DBoxArray): Boolean; overload;');
+  // random
+  AddFunction(@RandomizeTPA, 'procedure pp_Randomize(var arr: TPointArray);');
+  AddFunction(@RandomizeTIA, 'procedure pp_Randomize(var arr: TIntegerArray); overload;');
+  AddFunction(@RandomizeTEA, 'procedure pp_Randomize(var arr: TExtendedArray); overload;');
+  AddFunction(@RandomizeTSA, 'procedure pp_Randomize(var arr: TStringArray); overload;');
+  AddFunction(@RandomizeTCA, 'procedure pp_Randomize(var arr: TCharArray); overload;');
+  AddFunction(@RandomizeTBoA, 'procedure pp_Randomize(var arr: TBoolArray); overload;');
+  AddFunction(@RandomizeTBA, 'procedure pp_Randomize(var arr: TBoxArray); overload;');
+  AddFunction(@RandomizeExTPA, 'procedure pp_Randomize(var arr: TPointArray; shuffles: Integer); overload;');
+  AddFunction(@RandomizeExTIA, 'procedure pp_Randomize(var arr: TIntegerArray; shuffles: Integer); overload;');
+  AddFunction(@RandomizeExTEA, 'procedure pp_Randomize(var arr: TExtendedArray; shuffles: Integer); overload;');
+  AddFunction(@RandomizeExTSA, 'procedure pp_Randomize(var arr: TStringArray; shuffles: Integer); overload;');
+  AddFunction(@RandomizeExTCA, 'procedure pp_Randomize(var arr: TCharArray; shuffles: Integer); overload;');
+  AddFunction(@RandomizeExTBoA, 'procedure pp_Randomize(var arr: TBoolArray; shuffles: Integer); overload;');
+  AddFunction(@RandomizeExTBA, 'procedure pp_Randomize(var arr: TBoxArray; shuffles: Integer); overload;');
+  AddFunction(@RandomItemTPA, 'function pp_RandomItem(arr: TPointArray): TPoint;');
+  AddFunction(@RandomItemTIA, 'function pp_RandomItem(arr: TIntegerArray): Integer; overload;');
+  AddFunction(@RandomItemTEA, 'function pp_RandomItem(arr: TExtendedArray): Extended; overload;');
+  AddFunction(@RandomItemTSA, 'function pp_RandomItem(arr: TStringArray): string; overload;');
+  AddFunction(@RandomItemTCA, 'function pp_RandomItem(arr: TCharArray): Char; overload;');
+  AddFunction(@RandomItemTBoA, 'function pp_RandomItem(arr: TBoolArray): Boolean; overload;');
+  AddFunction(@RandomItemTBA, 'function pp_RandomItem(arr: TBoxArray): TBox; overload;');
+  // swap
+  AddFunction(@SwapTPA, 'procedure pp_Swap(var arr1, arr2: TPointArray);');
+  AddFunction(@SwapTIA, 'procedure pp_Swap(var arr1, arr2: TIntegerArray); overload;');
+  AddFunction(@SwapTEA, 'procedure pp_Swap(var arr1, arr2: TExtendedArray); overload;');
+  AddFunction(@SwapTSA, 'procedure pp_Swap(var arr1, arr2: TStringArray); overload;');
+  AddFunction(@SwapTCA, 'procedure pp_Swap(var arr1, arr2: TCharArray); overload;');
+  AddFunction(@SwapTBoA, 'procedure pp_Swap(var arr1, arr2: TBoolArray); overload;');
+  AddFunction(@SwapTBA, 'procedure pp_Swap(var arr1, arr2: TBoxArray); overload;');
+  AddFunction(@SwapATPA, 'procedure pp_Swap(var arr1, arr2: T2DPointArray); overload;');
+  AddFunction(@SwapATIA, 'procedure pp_Swap(var arr1, arr2: T2DIntegerArray); overload;');
+  AddFunction(@SwapATEA, 'procedure pp_Swap(var arr1, arr2: T2DExtendedArray); overload;');
+  AddFunction(@SwapATSA, 'procedure pp_Swap(var arr1, arr2: T2DStringArray); overload;');
+  AddFunction(@SwapATCA, 'procedure pp_Swap(var arr1, arr2: T2DCharArray); overload;');
+  AddFunction(@SwapATBoA, 'procedure pp_Swap(var arr1, arr2: T2DBoolArray); overload;');
+  AddFunction(@SwapATBA, 'procedure pp_Swap(var arr1, arr2: T2DBoxArray); overload;');
   // partition
   AddFunction(@PartitionTPA, 'procedure pp_Partition(arr: TPointArray; method: TPartitionMethod; x: Integer; var output: T2DPointArray);');
   AddFunction(@PartitionTIA, 'procedure pp_Partition(arr: TIntegerArray; method: TPartitionMethod; x: Integer; var output: T2DIntegerArray); overload;');

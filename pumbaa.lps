@@ -4,17 +4,16 @@
     <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="116">
+    <Units Count="125">
       <Unit0>
         <Filename Value="pumbaa.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="pumbaa"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
         <TopLine Value="4"/>
-        <CursorPos X="25" Y="19"/>
-        <UsageCount Value="95"/>
+        <CursorPos X="58" Y="15"/>
+        <UsageCount Value="99"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -28,20 +27,23 @@
       <Unit2>
         <Filename Value="src\point.pas"/>
         <UnitName Value="point"/>
-        <EditorIndex Value="2"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="108" Y="19"/>
+        <TopLine Value="19"/>
+        <CursorPos X="64" Y="48"/>
         <UsageCount Value="21"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="src\array.pas"/>
         <UnitName Value="array"/>
+        <EditorIndex Value="15"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="64"/>
-        <CursorPos X="85" Y="17"/>
+        <TopLine Value="673"/>
+        <CursorPos X="108" Y="682"/>
         <UsageCount Value="27"/>
+        <Loaded Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="src\global.pas"/>
@@ -110,10 +112,12 @@
       <Unit12>
         <Filename Value="src\array\copy.pas"/>
         <UnitName Value="copy"/>
+        <EditorIndex Value="18"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
+        <TopLine Value="172"/>
         <CursorPos X="90" Y="9"/>
         <UsageCount Value="13"/>
+        <Loaded Value="True"/>
       </Unit12>
       <Unit13>
         <Filename Value="src\array\clone.pas"/>
@@ -566,7 +570,7 @@
       <Unit69>
         <Filename Value="src\array\zap.pas"/>
         <UnitName Value="zap"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="9"/>
         <WindowIndex Value="0"/>
         <TopLine Value="191"/>
         <CursorPos X="28" Y="339"/>
@@ -752,9 +756,9 @@
       <Unit92>
         <Filename Value="src\mathematics.pas"/>
         <UnitName Value="mathematics"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="7"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="49"/>
+        <TopLine Value="46"/>
         <CursorPos X="43" Y="66"/>
         <UsageCount Value="16"/>
         <Loaded Value="True"/>
@@ -810,7 +814,7 @@
       <Unit99>
         <Filename Value="src\point\from.pas"/>
         <UnitName Value="from"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="10"/>
         <WindowIndex Value="0"/>
         <TopLine Value="206"/>
         <CursorPos X="28" Y="8"/>
@@ -820,10 +824,10 @@
       <Unit100>
         <Filename Value="src\mathematics\in.pas"/>
         <UnitName Value="in"/>
-        <EditorIndex Value="10"/>
+        <EditorIndex Value="13"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="23" Y="7"/>
+        <TopLine Value="5"/>
+        <CursorPos X="25" Y="21"/>
         <UsageCount Value="15"/>
         <Loaded Value="True"/>
       </Unit100>
@@ -878,17 +882,15 @@
       <Unit107>
         <Filename Value="src\mathematics\random.pas"/>
         <UnitName Value="random"/>
-        <EditorIndex Value="7"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="25" Y="45"/>
+        <TopLine Value="43"/>
+        <CursorPos X="18" Y="59"/>
         <UsageCount Value="15"/>
-        <Loaded Value="True"/>
       </Unit107>
       <Unit108>
         <Filename Value="src\mathematics\compare.pas"/>
         <UnitName Value="compare"/>
-        <EditorIndex Value="8"/>
+        <EditorIndex Value="11"/>
         <WindowIndex Value="0"/>
         <TopLine Value="6"/>
         <CursorPos X="59" Y="1"/>
@@ -898,7 +900,7 @@
       <Unit109>
         <Filename Value="src\mathematics\sign.pas"/>
         <UnitName Value="sign"/>
-        <EditorIndex Value="9"/>
+        <EditorIndex Value="12"/>
         <WindowIndex Value="0"/>
         <TopLine Value="6"/>
         <CursorPos X="21" Y="27"/>
@@ -908,7 +910,7 @@
       <Unit110>
         <Filename Value="src\mathematics\range.pas"/>
         <UnitName Value="range"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="8"/>
         <WindowIndex Value="0"/>
         <TopLine Value="52"/>
         <CursorPos X="11" Y="22"/>
@@ -918,7 +920,7 @@
       <Unit111>
         <Filename Value="src\mathematics\percent.pas"/>
         <UnitName Value="percent"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="33" Y="12"/>
@@ -944,10 +946,12 @@
       <Unit114>
         <Filename Value="C:\lazarus\fpc\2.6.1\source\packages\ptc\examples\random.pp"/>
         <UnitName Value="RandomExample"/>
+        <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="57"/>
-        <CursorPos X="40" Y="70"/>
+        <CursorPos X="54" Y="75"/>
         <UsageCount Value="10"/>
+        <Loaded Value="True"/>
       </Unit114>
       <Unit115>
         <Filename Value="src\mathematics\frac.pas"/>
@@ -957,27 +961,119 @@
         <CursorPos X="30" Y="60"/>
         <UsageCount Value="12"/>
       </Unit115>
+      <Unit116>
+        <Filename Value="..\GitHub\pumbaa\src\array\random.pas"/>
+        <UnitName Value="random"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="10"/>
+      </Unit116>
+      <Unit117>
+        <Filename Value="..\GitHub\pumbaa\src\array.pas"/>
+        <UnitName Value="array"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="698"/>
+        <CursorPos X="54" Y="699"/>
+        <UsageCount Value="10"/>
+      </Unit117>
+      <Unit118>
+        <Filename Value="src\array\random.pas"/>
+        <UnitName Value="random"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="61" Y="263"/>
+        <UsageCount Value="10"/>
+      </Unit118>
+      <Unit119>
+        <Filename Value="src\point\value.pas"/>
+        <UnitName Value="value"/>
+        <EditorIndex Value="14"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="21"/>
+        <CursorPos X="40" Y="32"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit119>
+      <Unit120>
+        <Filename Value="src\array\swap.pas"/>
+        <UnitName Value="swap"/>
+        <EditorIndex Value="17"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="50" Y="11"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit120>
+      <Unit121>
+        <Filename Value="src\point\density.pas"/>
+        <UnitName Value="density"/>
+        <EditorIndex Value="16"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="9"/>
+        <CursorPos X="14" Y="21"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit121>
+      <Unit122>
+        <Filename Value="src\point\center.pas"/>
+        <UnitName Value="center"/>
+        <EditorIndex Value="6"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="7"/>
+        <CursorPos X="26" Y="9"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit122>
+      <Unit123>
+        <Filename Value="src\point\extract.pas"/>
+        <UnitName Value="extract"/>
+        <EditorIndex Value="4"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="109"/>
+        <CursorPos X="23" Y="124"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit123>
+      <Unit124>
+        <Filename Value="src\point\filter.pas"/>
+        <UnitName Value="filter"/>
+        <EditorIndex Value="5"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="12" Y="24"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit124>
     </Units>
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="4" HistoryIndex="3">
+    <JumpHistory Count="6" HistoryIndex="5">
       <Position1>
-        <Filename Value="src\mathematics\random.pas"/>
-        <Caret Line="54" Column="19" TopLine="29"/>
-      </Position1>
-      <Position2>
-        <Filename Value="src\mathematics\random.pas"/>
-        <Caret Line="64" Column="19" TopLine="57"/>
-      </Position2>
-      <Position3>
         <Filename Value="pumbaa.lpr"/>
         <Caret Line="22" Column="30" TopLine="1"/>
-      </Position3>
-      <Position4>
+      </Position1>
+      <Position2>
         <Filename Value="pumbaa.lpr"/>
         <Caret Line="11" Column="13" TopLine="1"/>
+      </Position2>
+      <Position3>
+        <Filename Value="C:\lazarus\fpc\2.6.1\source\packages\ptc\examples\random.pp"/>
+        <Caret Line="70" Column="40" TopLine="57"/>
+      </Position3>
+      <Position4>
+        <Filename Value="src\point\value.pas"/>
+        <Caret Line="6" Column="25" TopLine="1"/>
       </Position4>
+      <Position5>
+        <Filename Value="src\point\value.pas"/>
+        <Caret Line="24" Column="30" TopLine="1"/>
+      </Position5>
+      <Position6>
+        <Filename Value="src\point\filter.pas"/>
+        <Caret Line="1" Column="13" TopLine="1"/>
+      </Position6>
     </JumpHistory>
   </ProjectSession>
   <EditorMacros Count="0"/>
