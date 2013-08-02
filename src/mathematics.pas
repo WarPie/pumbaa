@@ -13,6 +13,7 @@
 {$I mathematics\compare.pas}
 {$I mathematics\sign.pas}
 {$I mathematics\percent.pas}
+{$I mathematics\frac.pas}
 
 procedure AddMathFunctions;
 begin
@@ -70,4 +71,8 @@ begin
   // percent
   AddFunction(@Percent, 'function pp_Percent(position, source: Extended): Extended;');
   AddFunction(@Percentage, 'function pp_Percentage(percent, source: Extended): Extended;');
+  // frac
+  AddFunction(@LFrac, 'function pp_LFrac(e: Extended): Extended;');
+  AddFunction(@HFrac, 'function pp_HFrac(e: Extended): Extended;');
+  AddFunction(@FracAcc, 'function pp_FracAcc(x: Extended; a: Integer): Extended;');
 end;

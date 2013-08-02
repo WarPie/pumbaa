@@ -4,16 +4,17 @@
     <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="115">
+    <Units Count="116">
       <Unit0>
         <Filename Value="pumbaa.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="pumbaa"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="64"/>
-        <CursorPos X="46" Y="85"/>
-        <UsageCount Value="93"/>
+        <TopLine Value="4"/>
+        <CursorPos X="25" Y="19"/>
+        <UsageCount Value="95"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -31,7 +32,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="108" Y="19"/>
-        <UsageCount Value="19"/>
+        <UsageCount Value="21"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
@@ -565,11 +566,11 @@
       <Unit69>
         <Filename Value="src\array\zap.pas"/>
         <UnitName Value="zap"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="5"/>
         <WindowIndex Value="0"/>
         <TopLine Value="191"/>
         <CursorPos X="28" Y="339"/>
-        <UsageCount Value="14"/>
+        <UsageCount Value="16"/>
         <Loaded Value="True"/>
       </Unit69>
       <Unit70>
@@ -753,9 +754,9 @@
         <UnitName Value="mathematics"/>
         <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="11"/>
-        <CursorPos X="16" Y="58"/>
-        <UsageCount Value="14"/>
+        <TopLine Value="49"/>
+        <CursorPos X="43" Y="66"/>
+        <UsageCount Value="16"/>
         <Loaded Value="True"/>
       </Unit92>
       <Unit93>
@@ -809,21 +810,21 @@
       <Unit99>
         <Filename Value="src\point\from.pas"/>
         <UnitName Value="from"/>
-        <EditorIndex Value="8"/>
+        <EditorIndex Value="6"/>
         <WindowIndex Value="0"/>
         <TopLine Value="206"/>
         <CursorPos X="28" Y="8"/>
-        <UsageCount Value="14"/>
+        <UsageCount Value="16"/>
         <Loaded Value="True"/>
       </Unit99>
       <Unit100>
         <Filename Value="src\mathematics\in.pas"/>
         <UnitName Value="in"/>
-        <EditorIndex Value="12"/>
+        <EditorIndex Value="10"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="23" Y="7"/>
-        <UsageCount Value="13"/>
+        <UsageCount Value="15"/>
         <Loaded Value="True"/>
       </Unit100>
       <Unit101>
@@ -877,73 +878,68 @@
       <Unit107>
         <Filename Value="src\mathematics\random.pas"/>
         <UnitName Value="random"/>
-        <EditorIndex Value="9"/>
+        <EditorIndex Value="7"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="25" Y="45"/>
-        <UsageCount Value="13"/>
+        <UsageCount Value="15"/>
         <Loaded Value="True"/>
       </Unit107>
       <Unit108>
         <Filename Value="src\mathematics\compare.pas"/>
         <UnitName Value="compare"/>
-        <EditorIndex Value="10"/>
+        <EditorIndex Value="8"/>
         <WindowIndex Value="0"/>
         <TopLine Value="6"/>
         <CursorPos X="59" Y="1"/>
-        <UsageCount Value="12"/>
+        <UsageCount Value="14"/>
         <Loaded Value="True"/>
       </Unit108>
       <Unit109>
         <Filename Value="src\mathematics\sign.pas"/>
         <UnitName Value="sign"/>
-        <EditorIndex Value="11"/>
+        <EditorIndex Value="9"/>
         <WindowIndex Value="0"/>
         <TopLine Value="6"/>
         <CursorPos X="21" Y="27"/>
-        <UsageCount Value="12"/>
+        <UsageCount Value="14"/>
         <Loaded Value="True"/>
       </Unit109>
       <Unit110>
         <Filename Value="src\mathematics\range.pas"/>
         <UnitName Value="range"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
         <TopLine Value="52"/>
         <CursorPos X="11" Y="22"/>
-        <UsageCount Value="12"/>
+        <UsageCount Value="14"/>
         <Loaded Value="True"/>
       </Unit110>
       <Unit111>
         <Filename Value="src\mathematics\percent.pas"/>
         <UnitName Value="percent"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="33" Y="12"/>
-        <UsageCount Value="12"/>
+        <UsageCount Value="14"/>
         <Loaded Value="True"/>
       </Unit111>
       <Unit112>
         <Filename Value="src\mathematics\increase.pas"/>
         <UnitName Value="increase"/>
-        <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="21" Y="1"/>
-        <UsageCount Value="11"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="13"/>
       </Unit112>
       <Unit113>
         <Filename Value="src\mathematics\decrease.pas"/>
         <UnitName Value="decrease"/>
-        <EditorIndex Value="5"/>
         <WindowIndex Value="0"/>
         <TopLine Value="27"/>
         <CursorPos X="37" Y="32"/>
-        <UsageCount Value="11"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="13"/>
       </Unit113>
       <Unit114>
         <Filename Value="C:\lazarus\fpc\2.6.1\source\packages\ptc\examples\random.pp"/>
@@ -953,11 +949,19 @@
         <CursorPos X="40" Y="70"/>
         <UsageCount Value="10"/>
       </Unit114>
+      <Unit115>
+        <Filename Value="src\mathematics\frac.pas"/>
+        <UnitName Value="frac"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="39"/>
+        <CursorPos X="30" Y="60"/>
+        <UsageCount Value="12"/>
+      </Unit115>
     </Units>
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="2" HistoryIndex="1">
+    <JumpHistory Count="4" HistoryIndex="3">
       <Position1>
         <Filename Value="src\mathematics\random.pas"/>
         <Caret Line="54" Column="19" TopLine="29"/>
@@ -966,6 +970,14 @@
         <Filename Value="src\mathematics\random.pas"/>
         <Caret Line="64" Column="19" TopLine="57"/>
       </Position2>
+      <Position3>
+        <Filename Value="pumbaa.lpr"/>
+        <Caret Line="22" Column="30" TopLine="1"/>
+      </Position3>
+      <Position4>
+        <Filename Value="pumbaa.lpr"/>
+        <Caret Line="11" Column="13" TopLine="1"/>
+      </Position4>
     </JumpHistory>
   </ProjectSession>
   <EditorMacros Count="0"/>
