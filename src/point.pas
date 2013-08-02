@@ -15,11 +15,23 @@ begin
   AddFunction(@TPAFloodFill, 'procedure pp_TPAFloodFill(TPA: TPointArray; start: TPoint; FF8W: Boolean; var output: TPointArray);');
   AddFunction(@TPAFloodFillEx, 'procedure pp_TPAFloodFill(TPA: TPointArray; start: TPoint; FF8W: Boolean; area: TBox; var output: TPointArray); overload;');
   // split
-  AddFunction(@TPASplit, 'procedure pp_TPASplit(TPA: TPointArray; distance: Extended; method: TDistanceMethod; var output: T2DPointArray);');
-  AddFunction(@TPASplitEx, 'procedure pp_TPASplit(TPA: TPointArray; minDistance, maxDistance: Extended; method: TDistanceMethod; var output: T2DPointArray); overload;');
+  AddFunction(@TPASplit4, 'procedure pp_TPASplit(TPA: TPointArray; dist: Extended; var output: T2DPointArray);');
+  AddFunction(@TPASplit3, 'procedure pp_TPASplit(TPA: TPointArray; dist: Extended; method: TDistanceMethod; var output: T2DPointArray); overload;');
+  AddFunction(@TPASplit2, 'procedure pp_TPASplit(TPA: TPointArray; dist: Extended; rounding: TRoundingMethod; var output: T2DPointArray); overload;');
+  AddFunction(@TPASplit, 'procedure pp_TPASplit(TPA: TPointArray; dist: Extended; method: TDistanceMethod; rounding: TRoundingMethod; var output: T2DPointArray); overload;');
+  AddFunction(@TPASplitEx4, 'procedure pp_TPASplit(TPA: TPointArray; minDist, maxDist: Extended; var output: T2DPointArray); overload;');
+  AddFunction(@TPASplitEx3, 'procedure pp_TPASplit(TPA: TPointArray; minDist, maxDist: Extended; method: TDistanceMethod; var output: T2DPointArray); overload;');
+  AddFunction(@TPASplitEx2, 'procedure pp_TPASplit(TPA: TPointArray; minDist, maxDist: Extended; rounding: TRoundingMethod; var output: T2DPointArray); overload;');
+  AddFunction(@TPASplitEx, 'procedure pp_TPASplit(TPA: TPointArray; minDist, maxDist: Extended; method: TDistanceMethod; rounding: TRoundingMethod; var output: T2DPointArray); overload;');
   // group
-  AddFunction(@TPAGroup, 'procedure pp_TPAGroup(TPA: TPointArray; distance: Extended; method: TDistanceMethod; var output: T2DPointArray);');
-  AddFunction(@TPAGroupEx, 'procedure pp_TPAGroup(TPA: TPointArray; minDistance, maxDistance: Extended; method: TDistanceMethod; var output: T2DPointArray); overload;');
+  AddFunction(@TPAGroup4, 'procedure pp_TPAGroup(TPA: TPointArray; dist: Extended; var output: T2DPointArray);');
+  AddFunction(@TPAGroup3, 'procedure pp_TPAGroup(TPA: TPointArray; dist: Extended; method: TDistanceMethod; var output: T2DPointArray); overload;');
+  AddFunction(@TPAGroup2, 'procedure pp_TPAGroup(TPA: TPointArray; dist: Extended; rounding: TRoundingMethod; var output: T2DPointArray); overload;');
+  AddFunction(@TPAGroup, 'procedure pp_TPAGroup(TPA: TPointArray; dist: Extended; method: TDistanceMethod; rounding: TRoundingMethod; var output: T2DPointArray); overload;');
+  AddFunction(@TPAGroupEx4, 'procedure pp_TPAGroup(TPA: TPointArray; minDist, maxDist: Extended; var output: T2DPointArray); overload;');
+  AddFunction(@TPAGroupEx3, 'procedure pp_TPAGroup(TPA: TPointArray; minDist, maxDist: Extended; method: TDistanceMethod; var output: T2DPointArray); overload;');
+  AddFunction(@TPAGroupEx2, 'procedure pp_TPAGroup(TPA: TPointArray; minDist, maxDist: Extended; rounding: TRoundingMethod; var output: T2DPointArray); overload;');
+  AddFunction(@TPAGroupEx, 'procedure pp_TPAGroup(TPA: TPointArray; minDist, maxDist: Extended; method: TDistanceMethod; rounding: TRoundingMethod; var output: T2DPointArray); overload;');
   // from
   AddFunction(@TPAFromLine, 'procedure pp_TPAFromLine(lineStart, lineEnd: TPoint; var output: TPointArray);');
   AddFunction(@TPAFromPolygon, 'procedure pp_TPAFromPolygon(shape: TPointArray; var output: TPointArray);');
@@ -40,11 +52,23 @@ begin
   // extract
   AddFunction(@TPAExtractBoxes, 'procedure pp_TPAExtractBoxes(var TPA: TPointArray; boxes: TBoxArray);');
   AddFunction(@TPAExtractPoints, 'procedure pp_TPAExtractPoints(var TPA: TPointArray; points: TPointArray);');
-  AddFunction(@TPAExtractNearbyPoints, 'procedure pp_TPAExtractNearbyPoints(var TPA: TPointArray; targets: TPointArray; dist: Extended; method: TDistanceMethod);');
-  AddFunction(@TPAExtractNearbyPointsEx, 'procedure pp_TPAExtractNearbyPoints(var TPA: TPointArray; targets: TPointArray; minDist, maxDist: Extended; method: TDistanceMethod); overload;');
+  AddFunction(@TPAExtractNearbyPoints4, 'procedure pp_TPAExtractNearbyPoints(var TPA: TPointArray; targets: TPointArray; dist: Extended);');
+  AddFunction(@TPAExtractNearbyPoints3, 'procedure pp_TPAExtractNearbyPoints(var TPA: TPointArray; targets: TPointArray; dist: Extended; method: TDistanceMethod); overload;');
+  AddFunction(@TPAExtractNearbyPoints2, 'procedure pp_TPAExtractNearbyPoints(var TPA: TPointArray; targets: TPointArray; dist: Extended; rounding: TRoundingMethod); overload;');
+  AddFunction(@TPAExtractNearbyPoints, 'procedure pp_TPAExtractNearbyPoints(var TPA: TPointArray; targets: TPointArray; dist: Extended; method: TDistanceMethod; rounding: TRoundingMethod); overload;');
+  AddFunction(@TPAExtractNearbyPointsEx4, 'procedure pp_TPAExtractNearbyPoints(var TPA: TPointArray; targets: TPointArray; minDist, maxDist: Extended); overload;');
+  AddFunction(@TPAExtractNearbyPointsEx3, 'procedure pp_TPAExtractNearbyPoints(var TPA: TPointArray; targets: TPointArray; minDist, maxDist: Extended; method: TDistanceMethod); overload;');
+  AddFunction(@TPAExtractNearbyPointsEx2, 'procedure pp_TPAExtractNearbyPoints(var TPA: TPointArray; targets: TPointArray; minDist, maxDist: Extended; rounding: TRoundingMethod); overload;');
+  AddFunction(@TPAExtractNearbyPointsEx, 'procedure pp_TPAExtractNearbyPoints(var TPA: TPointArray; targets: TPointArray; minDist, maxDist: Extended; method: TDistanceMethod; rounding: TRoundingMethod); overload;');
   // filter
   AddFunction(@TPAFilterBoxes, 'procedure pp_TPAFilterBoxes(var TPA: TPointArray; boxes: TBoxArray);');
   AddFunction(@TPAFilterPoints, 'procedure pp_TPAFilterPoints(var TPA: TPointArray; points: TPointArray);');
-  AddFunction(@TPAFilterNearbyPoints, 'procedure pp_TPAFilterNearbyPoints(var TPA: TPointArray; targets: TPointArray; dist: Extended; method: TDistanceMethod);');
-  AddFunction(@TPAFilterNearbyPointsEx, 'procedure pp_TPAFilterNearbyPoints(var TPA: TPointArray; targets: TPointArray; minDist, maxDist: Extended; method: TDistanceMethod); overload;');
+  AddFunction(@TPAFilterNearbyPoints4, 'procedure pp_TPAFilterNearbyPoints(var TPA: TPointArray; targets: TPointArray; dist: Extended);');
+  AddFunction(@TPAFilterNearbyPoints3, 'procedure pp_TPAFilterNearbyPoints(var TPA: TPointArray; targets: TPointArray; dist: Extended; method: TDistanceMethod); overload;');
+  AddFunction(@TPAFilterNearbyPoints2, 'procedure pp_TPAFilterNearbyPoints(var TPA: TPointArray; targets: TPointArray; dist: Extended; rounding: TRoundingMethod); overload;');
+  AddFunction(@TPAFilterNearbyPoints, 'procedure pp_TPAFilterNearbyPoints(var TPA: TPointArray; targets: TPointArray; dist: Extended; method: TDistanceMethod; rounding: TRoundingMethod); overload;');
+  AddFunction(@TPAFilterNearbyPointsEx4, 'procedure pp_TPAFilterNearbyPoints(var TPA: TPointArray; targets: TPointArray; minDist, maxDist: Extended); overload;');
+  AddFunction(@TPAFilterNearbyPointsEx3, 'procedure pp_TPAFilterNearbyPoints(var TPA: TPointArray; targets: TPointArray; minDist, maxDist: Extended; method: TDistanceMethod); overload;');
+  AddFunction(@TPAFilterNearbyPointsEx2, 'procedure pp_TPAFilterNearbyPoints(var TPA: TPointArray; targets: TPointArray; minDist, maxDist: Extended; rounding: TRoundingMethod); overload;');
+  AddFunction(@TPAFilterNearbyPointsEx, 'procedure pp_TPAFilterNearbyPoints(var TPA: TPointArray; targets: TPointArray; minDist, maxDist: Extended; method: TDistanceMethod; rounding: TRoundingMethod); overload;');
 end;

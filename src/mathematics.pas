@@ -41,7 +41,10 @@ begin
   AddFunction(@RandomRangeEx, 'procedure pp_RandomRangeEx(aFrom, aTo, amount: Integer; duplicates: Boolean; var output: TIntegerArray);');
   AddFunction(@RandomEx, 'procedure pp_RandomEx(range, amount: Integer; duplicates: Boolean; var output: TIntegerArray);');
   // distance
-  AddFunction(@Distance, 'function pp_Distance(pt1, pt2: TPoint; method: TDistanceMethod): Extended;');
+  AddFunction(@Distance, 'function pp_Distance(pt1, pt2: TPoint): Extended;');
+  AddFunction(@Distance2, 'function pp_Distance(pt1, pt2: TPoint; rounding: TRoundingMethod): Extended; overload;');
+  AddFunction(@Distance3, 'function pp_Distance(pt1, pt2: TPoint; method: TDistanceMethod): Extended; overload;');
+  AddFunction(@DistanceEx, 'function pp_Distance(pt1, pt2: TPoint; method: TDistanceMethod; rounding: TRoundingMethod): Extended; overload;');
   // angle
   AddFunction(@Angle, 'function pp_Angle(pt1, pt2: TPoint; method: TAngleMethod): Extended;');
   // difference

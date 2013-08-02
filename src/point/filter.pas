@@ -63,44 +63,13 @@ begin
 end;
 
 {==============================================================================]
- @action: Removes all points from TPA that are within distance from targets.
- @note: None
- @contributors: Janilabo, slacky
-[==============================================================================}
-
-procedure TPAFilterNearbyPoints(var TPA: TPointArray; targets: TPointArray; dist: Extended; method: TDistanceMethod); callconv
-var
-  a, b, c, x, y: Integer;
-  z: Boolean;
-begin
-  b := High(TPA);
-  y := High(targets);
-  c := 0;
-  if ((b > -1) and (y > -1)) then
-  for a := 0 to b do
-  begin
-    for x := 0 to y do
-    begin
-      z := (dist >= Distance(TPA[a], targets[x], method));
-      if z then
-        Break;
-    end;
-    if not z then
-    begin
-      TPA[c] := TPA[a];
-      Inc(c);
-    end;
-  end;
-  SetLength(TPA, c);
-end;
-
-{==============================================================================]
  @action: Removes all points from TPA that are within distance range (minDistance, maxDistance) from targets.
  @note: None
  @contributors: Janilabo, slacky
 [==============================================================================}
 
-procedure TPAFilterNearbyPointsEx(var TPA: TPointArray; targets: TPointArray; minDist, maxDist: Extended; method: TDistanceMethod); callconv
+// With distance and rounding methods.
+procedure TPAFilterNearbyPointsEx(var TPA: TPointArray; targets: TPointArray; minDist, maxDist: Extended; method: TDistanceMethod; rounding: TRoundingMethod); callconv
 var
   a, b, c, x, y: Integer;
   d, s: Extended;
@@ -121,7 +90,7 @@ begin
     begin
       for x := 0 to y do
       begin
-        d := Distance(TPA[a], targets[x], method);
+        d := DistanceEx(TPA[a], targets[x], method, rounding);
         z := ((d >= minDist) and (d <= maxDist));
         if z then
           Break;
@@ -134,4 +103,52 @@ begin
     end;
   end;
   SetLength(TPA, c);
+end;
+
+ // Without distance method.
+procedure TPAFilterNearbyPointsEx2(var TPA: TPointArray; targets: TPointArray; minDist, maxDist: Extended; rounding: TRoundingMethod); callconv
+begin
+  TPAFilterNearbyPointsEx(TPA, targets, minDist, maxDist, DEFAULT_DISTANCE_METHOD, rounding);
+end;
+
+// Without rounding method.
+procedure TPAFilterNearbyPointsEx3(var TPA: TPointArray; targets: TPointArray; minDist, maxDist: Extended; method: TDistanceMethod); callconv
+begin
+  TPAFilterNearbyPointsEx(TPA, targets, minDist, maxDist, method, rm_None);
+end;
+
+// Without distance and rounding methods.
+procedure TPAFilterNearbyPointsEx4(var TPA: TPointArray; targets: TPointArray; minDist, maxDist: Extended); callconv
+begin
+  TPAFilterNearbyPointsEx(TPA, targets, minDist, maxDist, DEFAULT_DISTANCE_METHOD, rm_None);
+end;
+
+{==============================================================================]
+ @action: Removes all points from TPA that are within distance from targets.
+ @note: None
+ @contributors: Janilabo, slacky
+[==============================================================================}
+
+// With distance and rounding methods.
+procedure TPAFilterNearbyPoints(var TPA: TPointArray; targets: TPointArray; dist: Extended; method: TDistanceMethod; rounding: TRoundingMethod); callconv
+begin
+  TPAFilterNearbyPointsEx(TPA, targets, 0, dist, method, rounding);
+end;
+
+// Without distance method.
+procedure TPAFilterNearbyPoints2(var TPA: TPointArray; targets: TPointArray; dist: Extended; rounding: TRoundingMethod); callconv
+begin
+  TPAFilterNearbyPointsEx(TPA, targets, 0, dist, DEFAULT_DISTANCE_METHOD, rounding);
+end;
+
+// Without rounding method.
+procedure TPAFilterNearbyPoints3(var TPA: TPointArray; targets: TPointArray; dist: Extended; method: TDistanceMethod); callconv
+begin
+  TPAFilterNearbyPointsEx(TPA, targets, 0, dist, method, rm_None);
+end;
+
+// Without distance and rounding methods.
+procedure TPAFilterNearbyPoints4(var TPA: TPointArray; targets: TPointArray; dist: Extended); callconv
+begin
+  TPAFilterNearbyPointsEx(TPA, targets, 0, dist, DEFAULT_DISTANCE_METHOD, rm_None);
 end;

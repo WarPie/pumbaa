@@ -63,44 +63,13 @@ begin
 end;
 
 {==============================================================================]
- @action: Keeps all points in TPA that are within distance (dist) from targets.
- @note: None
- @contributors: Janilabo, slacky
-[==============================================================================}
-
-procedure TPAExtractNearbyPoints(var TPA: TPointArray; targets: TPointArray; dist: Extended; method: TDistanceMethod); callconv
-var
-  a, b, c, x, y: Integer;
-  z: Boolean;
-begin
-  b := High(TPA);
-  y := High(targets);
-  c := 0;
-  if ((b > -1) and (y > -1)) then
-  for a := 0 to b do
-  begin
-    for x := 0 to y do
-    begin
-      z := (dist >= Distance(TPA[a], targets[x], method));
-      if z then
-        Break;
-    end;
-    if z then
-    begin
-      TPA[c] := TPA[a];
-      Inc(c);
-    end;
-  end;
-  SetLength(TPA, c);
-end;
-
-{==============================================================================]
  @action: Keeps all points in TPA that are within distance range (minDist, maxDist) from targets.
  @note: None
  @contributors: Janilabo, slacky
 [==============================================================================}
 
-procedure TPAExtractNearbyPointsEx(var TPA: TPointArray; targets: TPointArray; minDist, maxDist: Extended; method: TDistanceMethod); callconv
+// With distance and rounding methods.
+procedure TPAExtractNearbyPointsEx(var TPA: TPointArray; targets: TPointArray; minDist, maxDist: Extended; method: TDistanceMethod; rounding: TRoundingMethod); callconv
 var
   a, b, c, x, y: Integer;
   d, s: Extended;
@@ -121,7 +90,7 @@ begin
     begin
       for x := 0 to y do
       begin
-        d := Distance(TPA[a], targets[x], method);
+        d := DistanceEx(TPA[a], targets[x], method, rounding);
         z := ((d >= minDist) and (d <= maxDist));
         if z then
           Break;
@@ -134,4 +103,52 @@ begin
     end;
   end;
   SetLength(TPA, c);
+end;
+
+// Without distance method.
+procedure TPAExtractNearbyPointsEx2(var TPA: TPointArray; targets: TPointArray; minDist, maxDist: Extended; rounding: TRoundingMethod); callconv
+begin
+  TPAExtractNearbyPointsEx(TPA, targets, minDist, maxDist, DEFAULT_DISTANCE_METHOD, rounding);
+end;
+
+// Without rounding method.
+procedure TPAExtractNearbyPointsEx3(var TPA: TPointArray; targets: TPointArray; minDist, maxDist: Extended; method: TDistanceMethod); callconv
+begin
+  TPAExtractNearbyPointsEx(TPA, targets, minDist, maxDist, method, rm_None);
+end;
+
+// Without distance and rounding methods.
+procedure TPAExtractNearbyPointsEx4(var TPA: TPointArray; targets: TPointArray; minDist, maxDist: Extended); callconv
+begin
+  TPAExtractNearbyPointsEx(TPA, targets, minDist, maxDist, DEFAULT_DISTANCE_METHOD, rm_None);
+end;
+
+{==============================================================================]
+ @action: Keeps all points in TPA that are within distance (dist) from targets.
+ @note: None
+ @contributors: Janilabo, slacky
+[==============================================================================}
+
+// With distance and rounding methods.
+procedure TPAExtractNearbyPoints(var TPA: TPointArray; targets: TPointArray; dist: Extended; method: TDistanceMethod; rounding: TRoundingMethod); callconv
+begin
+  TPAExtractNearbyPointsEx(TPA, targets, 0, dist, method, rounding);
+end;
+
+// Without distance method.
+procedure TPAExtractNearbyPoints2(var TPA: TPointArray; targets: TPointArray; dist: Extended; rounding: TRoundingMethod); callconv
+begin
+  TPAExtractNearbyPointsEx(TPA, targets, 0, dist, DEFAULT_DISTANCE_METHOD, rounding);
+end;
+
+// Without rounding method.
+procedure TPAExtractNearbyPoints3(var TPA: TPointArray; targets: TPointArray; dist: Extended; method: TDistanceMethod); callconv
+begin
+  TPAExtractNearbyPointsEx(TPA, targets, 0, dist, method, rm_None);
+end;
+
+// Without distance and rounding methods.
+procedure TPAExtractNearbyPoints4(var TPA: TPointArray; targets: TPointArray; dist: Extended); callconv
+begin
+  TPAExtractNearbyPointsEx(TPA, targets, 0, dist, DEFAULT_DISTANCE_METHOD, rm_None);
 end;

@@ -17,13 +17,21 @@ type
 type
   TDistanceMethod = (dm_Euclidean, dm_Euclidean2, dm_Manhattan, dm_Chebyshev);
 
-type
-  {==============================================================================]
+{==============================================================================]
   @action: Used for calculating angles, for example: point A to point B.
   @note: None
   @contributors: Janilabo, slacky
 [==============================================================================}
+type
   TAngleMethod = (am_Degrees, am_Radians, am_Compass);
+
+{==============================================================================]
+  @action: Used for calculating angles, for example: point A to point B.
+  @note: None
+  @contributors: Janilabo, slacky
+[==============================================================================}
+type
+  TRoundingMethod = (rm_None, rm_Round, rm_Floor, rm_Ceil, rm_Trunc);
 
 {==============================================================================]
   @action: Used for sorting arrays!
@@ -49,6 +57,22 @@ type
 type
   TPartitionMethod = (pm_BySize, pm_ByAmount);
 
+{==============================================================================]
+  @action: Default distance method, useful for TPoint distance calculation.
+  @note: None
+  @contributors: Janilabo, slacky
+[==============================================================================}
+const
+  DEFAULT_DISTANCE_METHOD = dm_Euclidean;
+
+{==============================================================================]
+  @action: Default rounding method, useful for TPoint angle calculation.
+  @note: None
+  @contributors: Janilabo, slacky
+[==============================================================================}
+const
+  DEFAULT_ROUNDING_METHOD = rm_Round;
+
 procedure AddGlobalTypes;
 begin
   AddType('TPartitionMethod', '(pm_BySize, pm_ByAmount);');
@@ -58,6 +82,7 @@ begin
   AddType('T2DCharArray', 'array of TCharArray');
   AddType('TDistanceMethod', '(dm_Euclidean, dm_Euclidean2, dm_Manhattan, dm_Chebyshev);');
   AddType('TAngleMethod', '(am_Degrees, am_Radians, am_Compass);');
+  AddType('TRoundingMethod', '(rm_None, rm_Round, rm_Floor, rm_Ceil, rm_Trunc);');
   AddType('TSortOrder', '(so_LowToHigh, so_HighToLow);');
   AddType('TSortAlgorithm', '(sa_BubbleSort, sa_OptimizedBubbleSort,' + #32 +
                              'sa_HeapSort, sa_InsertionSort, sa_ShellSort,' + #32 +

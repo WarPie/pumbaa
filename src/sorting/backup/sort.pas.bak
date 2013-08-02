@@ -19,7 +19,7 @@
 {$I algorithms\wallsort.pas}
 
 const
-  DEFAULT_SORTING_ALGORITHM = sa_QuickSort2;
+  DEFAULT_ALGORITHM = sa_QuickSort2;
 
 procedure SortTIAEx(var arr: TIntegerArray; algorithm: TSortAlgorithm; order: TSortOrder); callconv
 begin
@@ -123,22 +123,22 @@ end;
 
 procedure SortTIA(var arr: TIntegerArray); callconv
 begin
-  SortTIAEx(arr, DEFAULT_SORTING_ALGORITHM, so_LowToHigh);
+  SortTIAEx(arr, DEFAULT_ALGORITHM, so_LowToHigh);
 end;
 
 procedure SortTEA(var arr: TExtendedArray); callconv
 begin
-  SortTEAEx(arr, DEFAULT_SORTING_ALGORITHM, so_LowToHigh);
+  SortTEAEx(arr, DEFAULT_ALGORITHM, so_LowToHigh);
 end;
 
 procedure SortTSA(var arr: TStringArray); callconv
 begin
-  SortTSAEx(arr, DEFAULT_SORTING_ALGORITHM, so_LowToHigh);
+  SortTSAEx(arr, DEFAULT_ALGORITHM, so_LowToHigh);
 end;
 
 procedure SortTCA(var arr: TCharArray); callconv
 begin
-  SortTCAEx(arr, DEFAULT_SORTING_ALGORITHM, so_LowToHigh);
+  SortTCAEx(arr, DEFAULT_ALGORITHM, so_LowToHigh);
 end;
 
 procedure ASortTIA(var arr: TIntegerArray; algorithm: TSortAlgorithm); callconv
@@ -163,22 +163,22 @@ end;
 
 procedure RSortTIA(var arr: TIntegerArray); callconv
 begin
-  SortTIAEx(arr, DEFAULT_SORTING_ALGORITHM, so_HighToLow);
+  SortTIAEx(arr, DEFAULT_ALGORITHM, so_HighToLow);
 end;
 
 procedure RSortTEA(var arr: TExtendedArray); callconv
 begin
-  SortTEAEx(arr, DEFAULT_SORTING_ALGORITHM, so_HighToLow);
+  SortTEAEx(arr, DEFAULT_ALGORITHM, so_HighToLow);
 end;
 
 procedure RSortTSA(var arr: TStringArray); callconv
 begin
-  SortTSAEx(arr, DEFAULT_SORTING_ALGORITHM, so_HighToLow);
+  SortTSAEx(arr, DEFAULT_ALGORITHM, so_HighToLow);
 end;
 
 procedure RSortTCA(var arr: TCharArray); callconv
 begin
-  SortTCAEx(arr, DEFAULT_SORTING_ALGORITHM, so_HighToLow);
+  SortTCAEx(arr, DEFAULT_ALGORITHM, so_HighToLow);
 end;
 
 procedure ARSortTIA(var arr: TIntegerArray; algorithm: TSortAlgorithm); callconv

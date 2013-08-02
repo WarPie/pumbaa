@@ -230,6 +230,6 @@ begin
     end;
     2: TPAFromLine(C, S, output);
   else
-    TPAFromCircle(C, (Distance(C, S, dm_Euclidean2) + 0.5), output);
+    TPAFromCircle(C, (Distance3(C, S, dm_Euclidean2) + 0.5), output);
   end;
 end;
