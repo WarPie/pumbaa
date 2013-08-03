@@ -1,5 +1,6 @@
 {$I point\sort.pas}
 {$I point\unique.pas}
+{$I point\offset.pas}
 {$I point\floodfill.pas}
 {$I point\split.pas}
 {$I point\group.pas}
@@ -9,9 +10,11 @@
 {$I point\calculation.pas}
 {$I point\extract.pas}
 {$I point\filter.pas}
+{$I point\box.pas}
 {$I point\invert.pas}
 {$I point\edge.pas}
 {$I point\grid.pas}
+{$I point\rotate.pas}
 
 procedure AddPointFunctions;
 begin
@@ -20,6 +23,15 @@ begin
   AddFunction(@TPASortByColumn, 'procedure pp_TPASortByColumn(var TPA: TPointArray);');
   // unique
   AddFunction(@TPAUnique, 'procedure pp_TPAUnique(var TPA: TPointArray);');
+  // offset
+  AddFunction(@OffsetPoint, 'procedure OffsetPoint(var pt: TPoint; offset: TPoint);');
+  AddFunction(@OffsetPointEx2, 'procedure pp_OffsetPoint(var pt: TPoint; radius, angle: Extended); overload;');
+  AddFunction(@OffsetPointEx, 'procedure pp_OffsetPoint(var pt: TPoint; radius, angle: Extended; method: TAngleMethod); overload;');
+  AddFunction(@GetOffsetFromPoints, 'procedure pp_GetOffsetFromPoints(pt1, pt2: TPoint; var radius, angle: Extended);');
+  AddFunction(@GetOffsetFromPointsEx, 'procedure pp_GetOffsetFromPoints(pt1, pt2: TPoint; var radius, angle: Extended; method: TAngleMethod); overload;');
+  AddFunction(@TPAOffset, 'procedure pp_TPAOffset(var TPA: TPointArray; offset: TPoint);');
+  AddFunction(@TPAOffsetEx2, 'procedure pp_TPAOffset(var TPA: TPointArray; radius, angle: Extended); overload;');
+  AddFunction(@TPAOffsetEx, 'procedure pp_TPAOffset(var TPA: TPointArray; radius, angle: Extended; method: TAngleMethod); overload;');
   // floodfill
   AddFunction(@TPAFloodFill, 'procedure pp_TPAFloodFill(TPA: TPointArray; start: TPoint; scan: TScanDirections; var output: TPointArray);');
   AddFunction(@TPAFloodFillEx, 'procedure pp_TPAFloodFill(TPA: TPointArray; start: TPoint; scan: TScanDirections; area: TBox; var output: TPointArray); overload;');
@@ -89,4 +101,10 @@ begin
   AddFunction(@TPAGrid, 'procedure pp_TPAGrid(startPoint: TPoint; rows, columns, rowSpace, columnSpace: Integer; var output: TPointArray);');
   AddFunction(@TPARow, 'procedure pp_TPARow(startPoint: TPoint; rows, rowSpace: Integer; var output: TPointArray);');
   AddFunction(@TPAColumn, 'function pp_TPAColumn(startPoint: TPoint; columns, columnSpace: Integer): TPointArray;');
+  // box
+  AddFunction(@TPAUnusedBoxPixels, 'procedure pp_TPAUnusedBoxPixels(TPA: TPointArray; bx: TBox; var output: TPointArray);');
+  AddFunction(@TPAUsedBoxPixels, 'procedure pp_TPAUsedBoxPixels(TPA: TPointArray; bx: TBox; var output: TPointArray);');
+  // rotate
+  AddFunction(@TPARotate, 'procedure pp_TPARotate(var TPA: TPointArray; center: TPoint; angle: Extended);');
+  AddFunction(@TPARotateEx, 'procedure pp_TPARotate(var TPA: TPointArray; center: TPoint; angle: Extended; method: TAngleMethod); overload;');
 end;

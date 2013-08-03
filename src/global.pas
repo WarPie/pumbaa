@@ -74,6 +74,14 @@ const
   DEFAULT_DISTANCE_METHOD = dm_Euclidean;
 
 {==============================================================================]
+  @action: Default angle method, used in several TPA functions.
+  @note: None
+  @contributors: Janilabo, slacky
+[==============================================================================}
+const
+  DEFAULT_ANGLE_METHOD = am_Degrees;
+
+{==============================================================================]
   @action: Default rounding method, useful for TPoint angle calculation.
   @note: None
   @contributors: Janilabo, slacky
