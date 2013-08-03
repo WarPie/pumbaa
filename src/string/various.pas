@@ -165,48 +165,6 @@ begin
 end;
 
 {==============================================================================]
-  @action: Returns str with left-side trimmed/cleaned of spaces.
-  @note: None
-  @contributors: Janilabo, slacky
-[==============================================================================}
-
-function StrTrimStart(str: string): string; callconv
-var
-  i, l: Integer;
-begin
-  if (str <> '') then
-  begin
-    l := Length(str);
-    for i := 1 to l do
-      if (str[i] <> ' ') then
-        Break;
-    Result := Copy(str, i, ((l + 1) - i));
-  end else
-    Result := '';
-end;
-
-{==============================================================================]
-  @action: Returns str with right-side trimmed/cleaned of spaces.
-  @note: None
-  @contributors: Janilabo, slacky
-[==============================================================================}
-
-function StrTrimEnd(str: string): string; callconv
-var
-  i, l: Integer;
-begin
-  if (str <> '') then
-  begin
-    l := Length(str);
-    for i := l downto 1 do
-      if (str[i] <> ' ') then
-        Break;
-    Result := Copy(str, 1, i);
-  end else
-    Result := '';
-end;
-
-{==============================================================================]
   @action: Returns string (with size) that is behind the position in data.
   @note: None
   @contributors: Janilabo, slacky
@@ -530,4 +488,140 @@ begin
       Result := (Result + str);
     end else
       Result := str;
+end;
+
+{==============================================================================]
+  @action: Returns string of all TSA items binded together.
+  @note: None
+  @contributors: Janilabo, slacky
+[==============================================================================}
+
+function TSAConcat(TSA: TStringArray): string; callconv
+var
+  h, i: Integer;
+begin
+  Result := '';
+  h := High(TSA);
+  for i := 0 to h do
+    Result := (Result + TSA[i]);
+end;
+
+{==============================================================================]
+  @action: Returns string of all TSA items binded together.
+           Places glue between the indexes.
+  @note: None
+  @contributors: Janilabo, slacky
+[==============================================================================}
+
+function TSAConcatEx(TSA: TStringArray; glue: string): string; callconv
+var
+  h, i: Integer;
+begin
+  Result := '';
+  h := High(TSA);
+  if (h > -1) then
+  begin
+    for i := 0 to (h - 1) do
+      Result := ((Result + TSA[i]) + glue);
+    Result := (Result + TSA[i]);
+  end;
+end;
+
+{==============================================================================]
+  @action: Returns the quoted version of str.
+  @note: None
+  @contributors: Janilabo, slacky
+[==============================================================================}
+
+function StrQuotatation(str: string): string; callconv
+begin
+  Result := ('''' + StringReplace(str, '''', '''''', [rfReplaceAll]) + '''');
+end;
+
+{==============================================================================]
+  @action: Returns string with all characters escaped that are part of the regular expression syntax.
+  @note: Based on following character set: .\+*?[^]$(){}=!<>|:-
+  @contributors: Janilabo, slacky
+[==============================================================================}
+
+function StrPregQuote(str: string): string; callconv
+var
+  l, i: Integer;
+  r: string;
+begin
+  Result := str;
+  r := '.\+*?[^]$(){}=!<>|:-';
+  l := Length(str);
+  if (l > 0) then
+  for i := l downto 1 do
+    if (Pos(str[i], r) > 0) then
+      Insert('\', Result, i);
+end;
+
+{==============================================================================]
+  @action: Returns string with all characters escaped that are part of regexChars.
+  @note: Supports custom character set with regexChars.
+  @contributors: Janilabo, slacky
+[==============================================================================}
+
+function StrPregQuoteEx(str, regexChars: string): string; callconv
+var
+  l, i: Integer;
+begin
+  Result := str;
+  l := Length(str);
+  if ((l > 0) and (regexChars <> '')) then
+  for i := l downto 1 do
+    if (Pos(str[i], regexChars) > 0) then
+      Insert('\', Result, i);
+end;
+
+{==============================================================================]
+  @action: Splits string (str) from position stores the 2 halves to a and b variables.
+  @note: Does not include the char from position!
+  @contributors: Janilabo, slacky
+[==============================================================================}
+
+procedure StrSplit(str: string; var a, b: string; position: Integer); callconv
+var
+  l: Integer;
+begin
+  a := '';
+  b := '';
+  l := Length(str);
+  if (l > 0) then
+  begin
+    if (position < 1) then
+      position := 1;
+    a := Copy(str, 1, (position - 1));
+    Inc(position);
+    b := Copy(str, position, ((l - position) + 1));
+  end;
+end;
+
+{==============================================================================]
+  @action: Splits string (str) from position stores the 2 halves to a and b variables.
+           If includeCenter is set as true, char from position will be included to b variable.
+  @note: None
+  @contributors: Janilabo, slacky
+[==============================================================================}
+
+procedure StrSplitEx(str: string; var a, b: string; position: Integer; includeCenter: Boolean); callconv
+var
+  l, e: Integer;
+begin
+  a := '';
+  b := '';
+  l := Length(str);
+  if (l > 0) then
+  begin
+    e := 0;
+    if (position < 1) then
+      position := 1;
+    a := Copy(str, 1, (position - 1));
+    if not includeCenter then
+      e := 1;
+    position := (position + e);
+    b := Copy(str, position, ((l - position) + 1));
+  end;
 end;

@@ -50,6 +50,14 @@ type
   TResizeMethod = (rmFull, rmWidth, rmHeight, rmUp, rmDown, rmLeft, rmRight, rmTopLeft, rmTopRight, rmBottomLeft, rmBottomRight);
 
 {==============================================================================]
+  @action: Trimming sides for string/TSA trimming.
+  @note: None
+  @contributors: Janilabo, slacky
+[==============================================================================}
+type
+  TTrimSide = (ts_Both, ts_Left, ts_Start, ts_Right, ts_End);
+
+{==============================================================================]
   @action: Used for sorting arrays!
   @note: None
   @contributors: Janilabo, slacky
@@ -108,6 +116,7 @@ begin
   AddType('TAngleMethod', '(am_Degrees, am_Radians, am_Compass);');
   AddType('TRoundingMethod', '(rm_None, rm_Round, rm_Floor, rm_Ceil, rm_Trunc);');
   AddType('TScanDirections', '(sd4Ways, sd8Ways);');
+  AddType('TTrimSide', '(ts_Both, ts_Left, ts_Start, ts_Right, ts_End);');
   AddType('TResizeMethod', '(rmFull, rmWidth, rmHeight, rmUp, rmDown, rmLeft, rmRight, rmTopLeft, rmTopRight, rmBottomLeft, rmBottomRight);');
   AddType('TSortOrder', '(so_LowToHigh, so_HighToLow);');
   AddType('TSortAlgorithm', '(sa_BubbleSort, sa_OptimizedBubbleSort,' + #32 +

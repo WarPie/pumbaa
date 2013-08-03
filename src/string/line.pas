@@ -1,7 +1,7 @@
 {==============================================================================]
-  @action: WrapText().
-  @note: Delphi version: http://www.delphibasics.co.uk/RTL.asp?Name=WrapText
-  @contributors: Janilabo, slacky
+ @action: WrapText().
+ @note: Delphi version: http://www.delphibasics.co.uk/RTL.asp?Name=WrapText
+ @contributors: Janilabo, slacky
 [==============================================================================}
 
 function StrWrapText(str: string; maxCol: Integer): string; callconv
