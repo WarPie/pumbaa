@@ -4,17 +4,16 @@
     <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="152">
+    <Units Count="153">
       <Unit0>
         <Filename Value="pumbaa.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="pumbaa"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="14" Y="9"/>
-        <UsageCount Value="109"/>
+        <CursorPos X="11" Y="4"/>
+        <UsageCount Value="111"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -1052,11 +1051,11 @@
       <Unit130>
         <Filename Value="src\integer.pas"/>
         <UnitName Value="integer"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="5"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="56" Y="32"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="11"/>
         <Loaded Value="True"/>
       </Unit130>
       <Unit131>
@@ -1197,21 +1196,22 @@
       <Unit148>
         <Filename Value="src\box.pas"/>
         <UnitName Value="box"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="27" Y="6"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="11"/>
         <Loaded Value="True"/>
       </Unit148>
       <Unit149>
         <Filename Value="src\string.pas"/>
         <UnitName Value="string"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="7" Y="3"/>
-        <UsageCount Value="10"/>
+        <CursorPos X="7" Y="1"/>
+        <UsageCount Value="11"/>
         <Loaded Value="True"/>
       </Unit149>
       <Unit150>
@@ -1219,9 +1219,9 @@
         <UnitName Value="various"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="16" Y="4"/>
-        <UsageCount Value="10"/>
+        <TopLine Value="395"/>
+        <CursorPos X="20" Y="395"/>
+        <UsageCount Value="11"/>
         <Loaded Value="True"/>
       </Unit150>
       <Unit151>
@@ -1229,9 +1229,19 @@
         <UnitName Value="Stringtest"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="94" Y="12"/>
+        <CursorPos X="2" Y="2"/>
         <UsageCount Value="10"/>
       </Unit151>
+      <Unit152>
+        <Filename Value="src\string\wraptext.pas"/>
+        <UnitName Value="wraptext"/>
+        <EditorIndex Value="3"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="39"/>
+        <CursorPos X="64" Y="47"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit152>
     </Units>
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
