@@ -37,29 +37,77 @@ end;
 [==============================================================================}
 
 procedure TPAExtractPoints(var TPA: TPointArray; points: TPointArray); callconv
-var
-  a, b, c, x, y: Integer;
-  z: Boolean;
-begin
-  b := High(TPA);
-  y := High(points);
-  c := 0;
-  if ((b > -1) and (y > -1)) then
-  for a := 0 to b do
+  function TPABounds(TPA: TPointArray): TBox;
+  var
+    h, i: Integer;
   begin
-    for x := 0 to y do
+    h := High(TPA);
+    if (h > -1) then
     begin
-      z := ((TPA[a].X = points[x].X) and (TPA[a].Y = points[x].Y));
-      if z then
-        Break;
-    end;
-    if z then
+      Result.X1 := TPA[0].X;
+      Result.Y1 := TPA[0].Y;
+      Result.X2 := TPA[0].X;
+      Result.Y2 := TPA[0].Y;
+      if (h > 0) then
+      for i := 1 to h do
+      begin
+        if (TPA[i].X < Result.X1) then
+          Result.X1 := TPA[i].X
+        else
+          if (TPA[i].X > Result.X2) then
+            Result.X2 := TPA[i].X;
+        if (TPA[i].Y < Result.Y1) then
+          Result.Y1 := TPA[i].Y
+        else
+          if (TPA[i].Y > Result.Y2) then
+            Result.Y2 := TPA[i].Y;
+      end;
+    end else
     begin
-      TPA[c] := TPA[a];
-      Inc(c);
+      Result.X1 := 0;
+      Result.Y1 := 0;
+      Result.X2 := 0;
+      Result.Y2 := 0;
     end;
   end;
-  SetLength(TPA, c);
+var
+  v, h, r, l, x, y: Integer;
+  B: array of TBoolArray;
+  bx, tmp: TBox;
+begin;
+  r := 0;
+  l := Length(TPA);
+  if (l > 0) then
+  begin
+    bx := TPABounds(TPA); // ..or TPABounds() if built-in to Simba!
+    h := High(points);
+    if (h > -1) then
+    begin
+      tmp := TPABounds(points); // ..or TPABounds() if built-in to Simba!
+      bx.X1 := Min(bx.X1, tmp.X1);
+      bx.Y1 := Min(bx.Y1, tmp.Y1);
+      bx.X2 := Max(bx.X2, tmp.X2);
+      bx.Y2 := Max(bx.Y2, tmp.Y2);
+    end;
+    SetLength(B, ((bx.X2 - bx.X1) + 1));
+    for v := 0 to (bx.X2 - bx.X1) do
+    begin
+      SetLength(B[v], ((bx.Y2 - bx.Y1) + 1));
+      y := High(B[v]);
+      for x := 0 to y do
+        B[v][x] := False;
+    end;
+    for x := 0 to h do
+      B[(points[x].X - bx.X1)][(points[x].Y - bx.Y1)] := True;
+    for v := 0 to (l - 1) do
+      if B[(TPA[v].X - bx.X1)][(TPA[v].Y - bx.Y1)] then
+      begin
+        TPA[r] := TPA[v];
+        Inc(r);
+      end;
+    SetLength(B, 0);
+  end;
+  SetLength(TPA, r);
 end;
 
 {==============================================================================]

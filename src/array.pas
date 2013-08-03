@@ -30,6 +30,7 @@
 {$I array\extractevery.pas}
 {$I array\filterevery.pas}
 {$I array\random.pas}
+{$I array\value.pas}
 {$I array\swap.pas}
 {$I array\merge.pas}
 {$I array\size.pas}
@@ -698,6 +699,14 @@ begin
   AddFunction(@RandomItemTCA, 'function pp_RandomItem(arr: TCharArray): Char; overload;');
   AddFunction(@RandomItemTBoA, 'function pp_RandomItem(arr: TBoolArray): Boolean; overload;');
   AddFunction(@RandomItemTBA, 'function pp_RandomItem(arr: TBoxArray): TBox; overload;');
+  // value
+  AddFunction(@BuiltWithTPA, 'function pp_BuiltWith(arr, allowed: TPointArray): Boolean;');
+  AddFunction(@BuiltWithTIA, 'function pp_BuiltWith(arr, allowed: TIntegerArray): Boolean; overload;');
+  AddFunction(@BuiltWithTEA, 'function pp_BuiltWith(arr, allowed: TExtendedArray): Boolean; overload;');
+  AddFunction(@BuiltWithTSA, 'function pp_BuiltWith(arr, allowed: TStringArray): Boolean; overload;');
+  AddFunction(@BuiltWithTCA, 'function pp_BuiltWith(arr, allowed: TCharArray): Boolean; overload;');
+  AddFunction(@BuiltWithTBoA, 'function pp_BuiltWith(arr, allowed: TBoolArray): Boolean; overload;');
+  AddFunction(@BuiltWithTBA, 'function pp_BuiltWith(arr, allowed: TBoxArray): Boolean; overload;');
   // swap
   AddFunction(@SwapTPA, 'procedure pp_Swap(var arr1, arr2: TPointArray);');
   AddFunction(@SwapTIA, 'procedure pp_Swap(var arr1, arr2: TIntegerArray); overload;');

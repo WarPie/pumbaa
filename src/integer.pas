@@ -3,6 +3,9 @@
 {$I integer\numberline.pas}
 {$I integer\invert.pas}
 {$I integer\unique.pas}
+{$I integer\various.pas}
+{$I integer\split.pas}
+{$I integer\group.pas}
 
 procedure AddIntegerFunctions;
 begin
@@ -25,4 +28,12 @@ begin
   AddFunction(@TIAInvert, 'procedure pp_TIAInvert(var TIA: TIntegerArray);');
   // unique
   AddFunction(@TIAUnique, 'procedure pp_TIAUnique(var TIA: TIntegerArray);');
+  // various
+  AddFunction(@IntDigits, 'procedure pp_IntDigits(value: Int64; var output: TIntegerArray);');
+  // split
+  AddFunction(@TIASplit, 'procedure pp_TIASplit(TIA: TIntegerArray; diff: Integer; var output: T2DIntegerArray);');
+  AddFunction(@TIASplitEx, 'procedure pp_TIASplit(TIA: TIntegerArray; minDiff, maxDiff: Integer; var output: T2DIntegerArray); overload;');
+  // group
+  AddFunction(@TIAGroup, 'procedure pp_TIAGroup(TIA: TIntegerArray; diff: Integer; var output: T2DIntegerArray);');
+  AddFunction(@TIAGroupEx, 'procedure pp_TIAGroup(TIA: TIntegerArray; minDiff, maxDiff: Integer; var output: T2DIntegerArray); overload;');
 end;
