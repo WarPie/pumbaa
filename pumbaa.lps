@@ -4,7 +4,7 @@
     <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="153">
+    <Units Count="155">
       <Unit0>
         <Filename Value="pumbaa.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -12,8 +12,8 @@
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="11" Y="4"/>
-        <UsageCount Value="111"/>
+        <CursorPos X="27" Y="18"/>
+        <UsageCount Value="115"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -1051,11 +1051,11 @@
       <Unit130>
         <Filename Value="src\integer.pas"/>
         <UnitName Value="integer"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="7"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="56" Y="32"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="14"/>
         <Loaded Value="True"/>
       </Unit130>
       <Unit131>
@@ -1196,22 +1196,21 @@
       <Unit148>
         <Filename Value="src\box.pas"/>
         <UnitName Value="box"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="6"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="27" Y="6"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="14"/>
         <Loaded Value="True"/>
       </Unit148>
       <Unit149>
         <Filename Value="src\string.pas"/>
         <UnitName Value="string"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="7" Y="1"/>
-        <UsageCount Value="11"/>
+        <TopLine Value="26"/>
+        <CursorPos X="23" Y="37"/>
+        <UsageCount Value="14"/>
         <Loaded Value="True"/>
       </Unit149>
       <Unit150>
@@ -1219,9 +1218,9 @@
         <UnitName Value="various"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="395"/>
-        <CursorPos X="20" Y="395"/>
-        <UsageCount Value="11"/>
+        <TopLine Value="426"/>
+        <CursorPos X="29" Y="391"/>
+        <UsageCount Value="14"/>
         <Loaded Value="True"/>
       </Unit150>
       <Unit151>
@@ -1229,24 +1228,82 @@
         <UnitName Value="Stringtest"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="2" Y="2"/>
+        <CursorPos X="28" Y="1"/>
         <UsageCount Value="10"/>
       </Unit151>
       <Unit152>
         <Filename Value="src\string\wraptext.pas"/>
         <UnitName Value="wraptext"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="5"/>
         <WindowIndex Value="0"/>
         <TopLine Value="39"/>
         <CursorPos X="64" Y="47"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="13"/>
         <Loaded Value="True"/>
       </Unit152>
+      <Unit153>
+        <Filename Value="src\string\position.pas"/>
+        <UnitName Value="position"/>
+        <EditorIndex Value="3"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="28" Y="17"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
+      </Unit153>
+      <Unit154>
+        <Filename Value="src\string\between.pas"/>
+        <UnitName Value="between"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="4"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="22" Y="17"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit154>
     </Units>
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="0" HistoryIndex="-1"/>
+    <JumpHistory Count="9" HistoryIndex="8">
+      <Position1>
+        <Filename Value="src\string\various.pas"/>
+        <Caret Line="6" Column="27" TopLine="1"/>
+      </Position1>
+      <Position2>
+        <Filename Value="src\string\position.pas"/>
+        <Caret Line="1" Column="9" TopLine="1"/>
+      </Position2>
+      <Position3>
+        <Filename Value="src\string\position.pas"/>
+        <Caret Line="227" Column="20" TopLine="217"/>
+      </Position3>
+      <Position4>
+        <Filename Value="src\string\position.pas"/>
+        <Caret Line="263" Column="24" TopLine="255"/>
+      </Position4>
+      <Position5>
+        <Filename Value="src\string\position.pas"/>
+        <Caret Line="296" Column="25" TopLine="283"/>
+      </Position5>
+      <Position6>
+        <Filename Value="src\string\position.pas"/>
+        <Caret Line="8" Column="38" TopLine="1"/>
+      </Position6>
+      <Position7>
+        <Filename Value="src\string\between.pas"/>
+        <Caret Line="37" Column="31" TopLine="22"/>
+      </Position7>
+      <Position8>
+        <Filename Value="src\string\between.pas"/>
+        <Caret Line="76" Column="22" TopLine="71"/>
+      </Position8>
+      <Position9>
+        <Filename Value="src\string\between.pas"/>
+        <Caret Line="150" Column="23" TopLine="143"/>
+      </Position9>
+    </JumpHistory>
   </ProjectSession>
   <EditorMacros Count="0"/>
 </CONFIG>

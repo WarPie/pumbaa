@@ -1,8 +1,22 @@
+{$I string\position.pas}
 {$I string\various.pas}
+{$I string\between.pas}
 {$I string\wraptext.pas}
 
 procedure AddStringFunctions;
 begin
+  // position
+  AddFunction(@StrPos, 'function pp_StrPos(s, str: string): Integer;');
+  AddFunction(@StrPosEx, 'function pp_StrPos(s, str: string; offset: Integer): Integer; overload;');
+  AddFunction(@StrPosMulti, 'function pp_StrPos(s: TStringArray; str: string): Integer; overload;');
+  AddFunction(@StrPosMultiEx, 'function pp_StrPos(s: TStringArray; str: string; offset: Integer): Integer; overload;');
+  AddFunction(@StrPosMultiIDEx, 'function pp_StrPos(s: TStringArray; str: string; offset: Integer; var index: Integer): Integer; overload;');
+  AddFunction(@StrLastPos, 'function pp_StrLastPos(s, str: string): Integer;');
+  AddFunction(@StrLastPosEx, 'function pp_StrLastPos(s, str: string; offset: Integer): Integer; overload;');
+  AddFunction(@StrClosestPos, 'function pp_StrClosestPos(s, str: string; trgt_pos: Integer): Integer;');
+  AddFunction(@StrFarthestPos, 'function pp_StrFarthestPos(s, str: string; trgt_pos: Integer): Integer;');
+  AddFunction(@StrPosAll, 'procedure pp_StrPosAll(s, str: string; var output: TIntegerArray);');
+  AddFunction(@StrPosAllEx, 'procedure pp_StrPosAll(s, str: string; overlap: Boolean; var output: TIntegerArray); overload;');
   // various
   AddFunction(@StrLeft, 'function pp_StrLeft(str: string; x: Integer): string;');
   AddFunction(@StrRight, 'function pp_StrRight(str: string; x: Integer): string;');
@@ -28,6 +42,13 @@ begin
   AddFunction(@StrPatch, 'function pp_StrPatch(str, s: string; pos1, pos2: Integer): string;');
   AddFunction(@StrDuplicate, 'function pp_StrDuplicate(str: string; count: Integer): string;');
   AddFunction(@StrDuplicateEx, 'function pp_StrDuplicate(str: string; count: Integer; glue: string): string; overload;');
+  // between
+  AddFunction(@StrBetween, 'function StrBetween(s1, s2, str: string): string;');
+  AddFunction(@StrBetweenEx, 'function StrBetweenEx(s1, s2, str: string; offset: Integer): string; overload;');
+  AddFunction(@StrBetweenPositions, 'function pp_StrBetween(str: string; pos1, pos2: Integer): string; overload;');
+  AddFunction(@StrAllBetween, 'procedure pp_StrAllBetween(s1, s2, str: string; var output: TStringArray);');
+  AddFunction(@StrMultiBetween, 'procedure pp_StrMultiBetween(str, s1, s2: string; var output: TStringArray);');
+  AddFunction(@StrMultiBetweenEx, 'procedure pp_StrMultiBetween(str, s1, s2: string; method: Integer; var output: TStringArray); overload;');
   // wraptext
   AddFunction(@StrWrapText, 'function pp_StrWrapText(str: string; maxCol: Integer): string;');
   AddFunction(@StrWrapTextEx, 'function pp_StrWrapText(str, breakStr, breakChars: string; maxCol: Integer): string; overload;');

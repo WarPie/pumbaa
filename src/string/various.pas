@@ -1,16 +1,3 @@
-function PosEx(subStr, s: string; offset: Integer): Integer; inline;
-var
-  a, b: Integer;
-begin
-  a := Length(s);
-  b := Length(subStr);
-  if ((a > 0) and (b > 0) and (b <= a) and (offset > 0) and (offset <= ((a - b) + 1))) then
-  for Result := offset to ((a - b) + 1) do
-    if (subStr = Copy(s, Result, b)) then
-      Exit;
-  Result := 0;
-end;
-
 {==============================================================================]
   @action: Returns string from left with x as the count of characters.
   @note: None
@@ -164,7 +151,7 @@ begin
     begin
       p := 0;
       repeat
-        t := PosEx(s, str, (p + 1));
+        t := StrPosEx(s, str, (p + 1));
         if (t > 0) then
           p := t;
       until (t <= 0);
@@ -328,7 +315,7 @@ begin
   strL := Length(str);
   if ((sL < strL) and (offset < strL)) then
   begin
-    p := PosEx(s, str, offset);
+    p := StrPosEx(s, str, offset);
     if (p > 0) then
       Result := Copy(str, (p + sL), ((1 + strL) - (p + sL)))
     else
@@ -351,7 +338,7 @@ begin
   strL := Length(str);
   if ((Length(s) < strL) and (offset < strL)) then
   begin
-    p := PosEx(s, str, offset);
+    p := StrPosEx(s, str, offset);
     if (p > 1) then
       Result := Copy(str, 1, (p - 1))
     else
@@ -376,7 +363,7 @@ begin
   begin
     p := 0;
     repeat
-      p := PosEx(s, str, (p + 1));
+      p := StrPosEx(s, str, (p + 1));
       if (p > 0) then
         lp := p;
     until (p <= 0);
@@ -403,7 +390,7 @@ begin
   begin
     p := 0;
     repeat
-      p := PosEx(s, str, (p + 1));
+      p := StrPosEx(s, str, (p + 1));
       if (p > 0) then
         lp := p;
     until (p <= 0);
