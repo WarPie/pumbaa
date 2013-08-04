@@ -1,9 +1,11 @@
 {$I string\position.pas}
 {$I string\trim.pas}
 {$I string\various.pas}
+{$I string\replace.pas}
 {$I string\between.pas}
 {$I string\wraptext.pas}
 {$I string\word.pas}
+{$I string\count.pas}
 {$I string\explode.pas}
 {$I string\indentation.pas}
 {$I string\line.pas}
@@ -33,6 +35,11 @@ begin
   AddFunction(@TSATrim2, 'procedure pp_TSATrim(var TSA: TStringArray; delEmpty: Boolean); overload;');
   AddFunction(@TSATrim3, 'procedure pp_TSATrim(var TSA: TStringArray; side: TTrimSide); overload;');
   AddFunction(@TSATrimEx, 'procedure pp_TSATrim(var TSA: TStringArray; delEmpty: Boolean; side: TTrimSide); overload;');
+  // replace
+  AddFunction(@StrReplace, 'function pp_StrReplace(text, findStr, replaceStr: string; offset: Integer): string;');
+  AddFunction(@StrReplaceEx, 'function pp_StrReplace(text, findStr, replaceStr: string; offset: Integer; flags: TReplaceFlags): string; overload;');
+  AddFunction(@StrReplaceMulti, 'function pp_StrReplace(text: string; findStrs: TStringArray; replaceStr: string; offset: Integer): string; overload;');
+  AddFunction(@StrReplaceMultiEx, 'function pp_StrReplace(text: string; findStrs: TStringArray; replaceStr: string; offset: Integer; flags: TReplaceFlags): string; overload;');
   // various
   AddFunction(@StrLeft, 'function pp_StrLeft(str: string; x: Integer): string;');
   AddFunction(@StrRight, 'function pp_StrRight(str: string; x: Integer): string;');
@@ -56,13 +63,14 @@ begin
   AddFunction(@StrPatch, 'function pp_StrPatch(str, s: string; pos1, pos2: Integer): string;');
   AddFunction(@StrDuplicate, 'function pp_StrDuplicate(str: string; count: Integer): string;');
   AddFunction(@StrDuplicateEx, 'function pp_StrDuplicate(str: string; count: Integer; glue: string): string; overload;');
-  AddFunction(@TSAConcat, 'function pp_TSAConcat(TSA: TStringArray): string;');
-  AddFunction(@TSAConcatEx, 'function pp_TSAConcat(TSA: TStringArray; glue: string): string; overload;');
+  AddFunction(@StrCompare, 'function pp_StrCompare(s1, s2: string): Integer;');
   AddFunction(@StrQuotatation, 'function pp_StrQuotatation(str: string): string;');
   AddFunction(@StrPregQuote, 'function pp_StrPregQuote(str: string): string;');
   AddFunction(@StrPregQuoteEx, 'function pp_StrPregQuote(str, regexChars: string): string; overload;');
   AddFunction(@StrSplit, 'procedure pp_StrSplit(str: string; var a, b: string; position: Integer);');
   AddFunction(@StrSplitEx, 'procedure pp_StrSplit(str: string; var a, b: string; position: Integer; includeCenter: Boolean); overload;');
+  AddFunction(@TSAConcat, 'function pp_TSAConcat(TSA: TStringArray): string;');
+  AddFunction(@TSAConcatEx, 'function pp_TSAConcat(TSA: TStringArray; glue: string): string; overload;');
   // between
   AddFunction(@StrBetween, 'function pp_StrBetween(s1, s2, str: string): string;');
   AddFunction(@StrBetweenEx, 'function pp_StrBetween(s1, s2, str: string; offset: Integer): string; overload;');
@@ -78,6 +86,11 @@ begin
   AddFunction(@StrGetWordsEx, 'procedure pp_StrGetWords(text, wordCharacters: string; var output: TStringArray); overload;');
   AddFunction(@StrCountWords, 'function pp_StrCountWords(text: string): Integer;');
   AddFunction(@StrCountWordsEx, 'function pp_StrCountWords(text, wordCharacters: string): Integer; overload;');
+  // count
+  AddFunction(@StrCount, 'function pp_StrCount(s, str: string): Integer;');
+  AddFunction(@StrCountEx, 'function pp_StrCount(s, str: string; overlap: Boolean): Integer; overload;');
+  AddFunction(@StrCountMulti, 'function pp_StrCount(s: TStringArray; str: string): Integer; overload;');
+  AddFunction(@StrCountMultiEx, 'function pp_StrCount(s: TStringArray; str: string; overlap: Boolean): Integer; overload;');
   // explode
   AddFunction(@StrExplode, 'procedure pp_StrExplode(d, str: string; var output: TStringArray);');
   AddFunction(@StrExplodeEx, 'procedure pp_StrExplode(d, str: string; limit: Integer; var output: TStringArray); overload;');

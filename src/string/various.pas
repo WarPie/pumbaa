@@ -528,6 +528,23 @@ begin
 end;
 
 {==============================================================================]
+  @action: Compares s1 with s2.
+  @note: Results: 0=EQUAL, 1=s1>s2, -1=s1<s2
+  @contributors: Janilabo, slacky
+[==============================================================================}
+
+function StrCompare(s1, s2: string): Integer; callconv
+begin
+  if (s1 = s2) then
+    Result := 0
+  else
+    if (s1 > s2) then
+      Result := 1
+    else
+      Result := -1;
+end;
+
+{==============================================================================]
   @action: Returns the quoted version of str.
   @note: None
   @contributors: Janilabo, slacky
