@@ -82,6 +82,7 @@ begin
   AddFunction(@StrExplode, 'procedure pp_StrExplode(d, str: string; var output: TStringArray);');
   AddFunction(@StrExplodeEx, 'procedure pp_StrExplode(d, str: string; limit: Integer; var output: TStringArray); overload;');
   AddFunction(@StrExplodeMulti, 'procedure pp_StrExplode(d: TStringArray; str: string; var output: TStringArray); overload;');
+  AddFunction(@StrExplodeMultiEx, 'procedure pp_StrExplode(d: TStringArray; str: string; limit: Integer; var output: TStringArray); overload;');
   // indentation
   AddFunction(@StrIndentation, 'procedure pp_StrIndentation(var str: string; shift: Integer);');
   // line

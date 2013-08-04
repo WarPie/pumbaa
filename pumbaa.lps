@@ -4,17 +4,16 @@
     <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="167">
+    <Units Count="169">
       <Unit0>
         <Filename Value="pumbaa.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="pumbaa"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="8" Y="2"/>
-        <UsageCount Value="125"/>
+        <UsageCount Value="126"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -1204,7 +1203,7 @@
         <Filename Value="src\string.pas"/>
         <UnitName Value="string"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="12"/>
+        <TopLine Value="1"/>
         <CursorPos X="19" Y="14"/>
         <UsageCount Value="19"/>
       </Unit149>
@@ -1267,10 +1266,13 @@
       <Unit157>
         <Filename Value="src\string\explode.pas"/>
         <UnitName Value="explode"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="4"/>
-        <CursorPos X="1" Y="7"/>
+        <TopLine Value="52"/>
+        <CursorPos X="5" Y="161"/>
         <UsageCount Value="12"/>
+        <Loaded Value="True"/>
       </Unit157>
       <Unit158>
         <Filename Value="src\string\indentation.pas"/>
@@ -1284,7 +1286,7 @@
         <Filename Value="src\string\line.pas"/>
         <UnitName Value="line"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="253"/>
+        <TopLine Value="1"/>
         <CursorPos X="34" Y="275"/>
         <UsageCount Value="12"/>
       </Unit159>
@@ -1344,6 +1346,22 @@
         <UsageCount Value="10"/>
         <DefaultSyntaxHighlighter Value="None"/>
       </Unit166>
+      <Unit167>
+        <Filename Value="..\GitHub\pumbaa\src\string\explode.pas"/>
+        <UnitName Value="explode"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="24" Y="224"/>
+        <UsageCount Value="10"/>
+      </Unit167>
+      <Unit168>
+        <Filename Value="..\GitHub\pumbaa\src\string.pas"/>
+        <UnitName Value="string"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="67"/>
+        <CursorPos X="89" Y="84"/>
+        <UsageCount Value="10"/>
+      </Unit168>
     </Units>
     <General>
       <ActiveWindowIndexAtStart Value="0"/>

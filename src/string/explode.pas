@@ -96,50 +96,140 @@ end;
 
 procedure StrExplodeMulti(d: TStringArray; str: string; var output: TStringArray); callconv
 var
-  p, h, i, x, m, l, y, z: Integer;
-begin
-  h := High(d);
-  if ((h > -1) and (str <> '')) then
+  a, b, i, l, p, r, s, z, g: Integer;
+  m: Boolean;
+begin;
+  SetLength(output, 1);
+  l := Length(str);
+  s := Length(d);
+  if ((l > 0) and (s > 0)) then
   begin
-    i := 0;
-    SetLength(output, Length(str));
-    repeat
-      l := 0;
-      x := 0;
-      while (x <= h) do
+    r := 0;
+    z := 0;
+    for a := 0 to (s - 1) do
+      if (d[a] <> '') then
       begin
-        p := Pos(d[x], str);
-        if (p < 1) then
-        begin
-          z := High(d);
-          if ((x <= z) and (x > -1)) then
-          begin
-            for y := x to (z - 1) do
-              d[y] := d[(y + 1)];
-            SetLength(d, z);
-          end;
-          Dec(x);
-          Dec(h);
-        end else
-          if ((l = 0) or (p < l)) then
-          begin
-            m := x;
-            l := p;
-          end;
-        Inc(x);
+        if (z = 0) then
+          z := Length(d[a])
+        else
+          if (Length(d[a]) < z) then
+            z := Length(d[a]);
+        d[r] := d[a];
+        Inc(r);
       end;
-      if (l > 0) then
+    if (r > 0) then
+    begin
+      s := r;
+      a := 1;
+      p := 1;
+      r := 0;
+      while ((a + (z - 1)) <= l) do
       begin
-        output[i] := Copy(str, 1, (l - 1));
-        Delete(str, 1, ((l + Length(d[m])) - 1));
-        Inc(i);
-      end else
-        output[i] := Copy(str, 1, Length(str));
-    until (l = 0);
-    SetLength(output, (i + 1));
+        m := False;
+        for i := 0 to (s - 1) do
+        begin
+          g := Length(d[i]);
+          if ((a + (g - 1)) <= l) then
+          begin
+            for b := 1 to g do
+            begin
+              m := (str[((a + b) - 1)] = d[i][b]);
+              if not m then
+                Break;
+            end;
+            if m then
+              Break;
+          end;
+        end;
+        if m then
+        begin
+          output[r] := Copy(str, p, (a - p));
+          if ((a + (g + 1)) = l) then
+            Exit;
+          p := (a + g);
+          a := ((a + g) - 1);
+          Inc(r);
+          SetLength(output, (r + 1));
+        end;
+        Inc(a);
+      end;
+      output[r] := Copy(str, p, ((l - p) + 1));
+    end else
+      output[0] := '';
   end else
+    output[0] := '';
+end;
+
+{==============================================================================]
+  @action: Explodes str with multiple separators/delimiters (d).
+           The importance order for d items is from left to right (=>).
+           So place the important ones first and then less important after those.
+  @note: Supports limit.
+  @contributors: Janilabo, slacky
+[==============================================================================}
+
+procedure StrExplodeMultiEx(d: TStringArray; str: string; limit: Integer; var output: TStringArray); callconv
+var
+  a, b, i, l, p, r, s, z, g: Integer;
+  m: Boolean;
+begin;
+  SetLength(output, 1);
+  l := Length(str);
+  s := Length(d);
+  if ((l > 0) and (s > 0)) then
   begin
-    SetLength(output, 1);
-    output[0] := str;
-  end;
+    r := 0;
+    z := 0;
+    for a := 0 to (s - 1) do
+      if (d[a] <> '') then
+      begin
+        if (z = 0) then
+          z := Length(d[a])
+        else
+          if (Length(d[a]) < z) then
+            z := Length(d[a]);
+        d[r] := d[a];
+        Inc(r);
+      end;
+    if (r > 0) then
+    begin
+      s := r;
+      a := 1;
+      p := 1;
+      r := 0;
+      while (((r + 1) < limit) and ((a + (z - 1)) <= l)) do
+      begin
+        m := False;
+        for i := 0 to (s - 1) do
+        begin
+          g := Length(d[i]);
+          if ((a + (g - 1)) <= l) then
+          begin
+            for b := 1 to g do
+            begin
+              m := (str[((a + b) - 1)] = d[i][b]);
+              if not m then
+                Break;
+            end;
+            if m then
+              Break;
+          end;
+        end;
+        if m then
+        begin
+          output[r] := Copy(str, p, (a - p));
+          if ((a + (g + 1)) = l) then
+            Exit;
+          p := (a + g);
+          a := ((a + g) - 1);
+          Inc(r);
+          SetLength(output, (r + 1));
+        end;
+        Inc(a);
+      end;
+      output[r] := Copy(str, p, ((l - p) + 1));
+    end else
+      output[0] := '';
+  end else
+    output[0] := '';
 end;
