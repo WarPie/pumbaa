@@ -13,7 +13,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="49" Y="21"/>
-        <UsageCount Value="128"/>
+        <UsageCount Value="129"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -1202,22 +1202,21 @@
       <Unit149>
         <Filename Value="src\string.pas"/>
         <UnitName Value="string"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
         <TopLine Value="25"/>
         <CursorPos X="174" Y="42"/>
-        <UsageCount Value="19"/>
+        <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit149>
       <Unit150>
         <Filename Value="src\string\various.pas"/>
         <UnitName Value="various"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="6"/>
         <WindowIndex Value="0"/>
         <TopLine Value="529"/>
         <CursorPos X="5" Y="545"/>
-        <UsageCount Value="19"/>
+        <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit150>
       <Unit151>
@@ -1273,9 +1272,9 @@
         <UnitName Value="explode"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="50"/>
+        <TopLine Value="161"/>
         <CursorPos X="5" Y="161"/>
-        <UsageCount Value="12"/>
+        <UsageCount Value="13"/>
         <Loaded Value="True"/>
       </Unit157>
       <Unit158>
@@ -1289,10 +1288,13 @@
       <Unit159>
         <Filename Value="src\string\line.pas"/>
         <UnitName Value="line"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="34" Y="275"/>
-        <UsageCount Value="12"/>
+        <TopLine Value="117"/>
+        <CursorPos X="17" Y="117"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
       </Unit159>
       <Unit160>
         <Filename Value="src\array\extractitems.pas"/>
@@ -1371,19 +1373,19 @@
         <UnitName Value="count"/>
         <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="25" Y="67"/>
-        <UsageCount Value="10"/>
+        <TopLine Value="79"/>
+        <CursorPos X="24" Y="82"/>
+        <UsageCount Value="11"/>
         <Loaded Value="True"/>
       </Unit169>
       <Unit170>
         <Filename Value="src\string\replace.pas"/>
         <UnitName Value="replace"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="5"/>
         <WindowIndex Value="0"/>
         <TopLine Value="43"/>
         <CursorPos X="31" Y="52"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="11"/>
         <Loaded Value="True"/>
       </Unit170>
     </Units>
