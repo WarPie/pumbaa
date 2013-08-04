@@ -540,7 +540,8 @@ end;
 
 {==============================================================================]
   @action: Returns string with all characters escaped that are part of the regular expression syntax.
-  @note: Based on following character set: .\+*?[^]$(){}=!<>|:-
+  @note: Based on the character set below...
+         '.', '\', '+', '*', '?', '[', '^', ']', '$', '(', ')', '{', '}', '=', '!', '<', '>', '|', ':', '-'
   @contributors: Janilabo, slacky
 [==============================================================================}
 

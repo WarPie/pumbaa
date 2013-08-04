@@ -6,6 +6,7 @@
 {$I string\word.pas}
 {$I string\explode.pas}
 {$I string\indentation.pas}
+{$I string\line.pas}
 
 procedure AddStringFunctions;
 begin
@@ -82,4 +83,11 @@ begin
   AddFunction(@StrExplodeMulti, 'procedure pp_StrExplode(d: TStringArray; str: string; var output: TStringArray); overload;');
   // indentation
   AddFunction(@StrIndentation, 'procedure pp_StrIndentation(var str: string; shift: Integer);');
+  // line
+  AddFunction(@StrLines, 'procedure pp_StrLines(str: string; var output: TStringArray);');
+  AddFunction(@StrLine, 'function pp_StrLine(str: string; number: Integer): string;');
+  AddFunction(@StrLinePositions, 'procedure pp_StrLinePositions(str: string; var output: TIntegerArray);');
+  AddFunction(@StrLineCount, 'function pp_StrLineCount(str: string): Integer;');
+  AddFunction(@StrLineByPos, 'function pp_StrLineByPos(str: string; position: Integer): Integer;');
+  AddFunction(@StrPosByLine, 'function pp_StrPosByLine(str: string; line: Integer): Integer;');
 end;
