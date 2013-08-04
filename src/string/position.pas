@@ -299,3 +299,57 @@ begin
   end;
   SetLength(output, r);
 end;
+
+{==============================================================================]
+  @action: Outputs all the s positions in str.
+           ('aa', 'baaaah', False) => [2,3,4]
+           ('aa', 'baaaah', True) => [2,4]
+  @note: If overlap is set to true, strings can overlap.
+  @contributors: Janilabo, slacky
+[==============================================================================}
+
+procedure StrPosAllMulti(s: TStringArray; str: string; overlap: Boolean; var output: TIntegerArray); callconv
+var
+  h, l, p, o, x, i, t, r, y, d: Integer;
+begin
+  r := 0;
+  h := High(s);
+  y := Length(str);
+  if ((y > 0) and (h > -1)) then
+  begin
+    l := 0;
+    SetLength(output, y);
+    o := 1;
+    repeat
+      p := 0;
+      x := 0;
+      while (x <= h) do
+      begin
+        t := StrPosEx(s[x], str, (l + o));
+        if (t < 1) then
+        begin
+          for d := x to (h - 1) do
+            s[d] := s[(d + 1)];
+          SetLength(s, h);
+          Dec(x);
+          Dec(h);
+        end else
+          if ((p = 0) or (t < p)) then
+          begin
+            p := t;
+            i := x;
+          end;
+        Inc(x);
+      end;
+      if (p > 0) then
+      begin
+        output[r] := p;
+        Inc(r);
+        l := p;
+        if not overlap then
+          o := Length(s[i]);
+      end;
+    until (p <= 0);
+  end;
+  SetLength(output, r);
+end;

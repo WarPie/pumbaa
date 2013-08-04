@@ -22,6 +22,7 @@ begin
   AddFunction(@StrFarthestPos, 'function pp_StrFarthestPos(s, str: string; trgt_pos: Integer): Integer;');
   AddFunction(@StrPosAll, 'procedure pp_StrPosAll(s, str: string; var output: TIntegerArray);');
   AddFunction(@StrPosAllEx, 'procedure pp_StrPosAll(s, str: string; overlap: Boolean; var output: TIntegerArray); overload;');
+  AddFunction(@StrPosAllMulti, 'procedure pp_StrPosAll(s: TStringArray; str: string; overlap: Boolean; var output: TIntegerArray); overload;');
   // trim
   AddFunction(@StrTrimStart, 'function pp_StrTrimLeft(str: string): string;');
   AddFunction(@StrTrimStart, 'function pp_StrTrimStart(str: string): string; overload;');

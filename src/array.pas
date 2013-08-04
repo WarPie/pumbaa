@@ -19,14 +19,18 @@
 {$I array\reverse.pas}
 {$I array\unique.pas}
 {$I array\uniques.pas}
+{$I array\allunique.pas}
 {$I array\contains.pas}
 {$I array\holds.pas}
 {$I array\position.pas}
 {$I array\positions.pas}
 {$I array\trace.pas}
 {$I array\empty.pas}
-{$I array\equals.pas}
+{$I array\equal.pas}
+{$I array\allequal.pas}
 {$I array\partition.pas}
+{$I array\extractitems.pas}
+{$I array\filteritems.pas}
 {$I array\extractevery.pas}
 {$I array\filterevery.pas}
 {$I array\random.pas}
@@ -472,6 +476,14 @@ begin
   AddFunction(@UniquesTCA, 'procedure pp_Uniques(arr: TCharArray; var output: TIntegerArray); overload;');
   AddFunction(@UniquesTBoA, 'procedure pp_Uniques(arr: TBoolArray; var output: TIntegerArray); overload;');
   AddFunction(@UniquesTBA, 'procedure pp_Uniques(arr: TBoxArray; var output: TIntegerArray); overload;');
+  // allunique
+  AddFunction(@AllUniqueTPA, 'function pp_AllUnique(arr: TPointArray): Boolean;');
+  AddFunction(@AllUniqueTIA, 'function pp_AllUnique(arr: TIntegerArray): Boolean; overload;');
+  AddFunction(@AllUniqueTEA, 'function pp_AllUnique(arr: TExtendedArray): Boolean; overload;');
+  AddFunction(@AllUniqueTSA, 'function pp_AllUnique(arr: TStringArray): Boolean; overload;');
+  AddFunction(@AllUniqueTCA, 'function pp_AllUnique(arr: TCharArray): Boolean; overload;');
+  AddFunction(@AllUniqueTBoA, 'function pp_AllUnique(arr: TBoolArray): Boolean; overload;');
+  AddFunction(@AllUniqueTBA, 'function pp_AllUnique(arr: TBoxArray): Boolean; overload;');
   // contains
   AddFunction(@ContainsTPA, 'function pp_Contains(arr: TPointArray; item: TPoint): Boolean;');
   AddFunction(@ContainsTIA, 'function pp_Contains(arr: TIntegerArray; item: Integer): Boolean; overload;');
@@ -632,6 +644,22 @@ begin
   AddFunction(@EmptyATCA, 'function pp_Empty(arr: T2DCharArray): Boolean; overload;');
   AddFunction(@EmptyATBoA, 'function pp_Empty(arr: T2DBoolArray): Boolean; overload;');
   AddFunction(@EmptyATBA, 'function pp_Empty(arr: T2DBoxArray): Boolean; overload;');
+  // extractitems
+  AddFunction(@ExtractItemsTPA, 'procedure pp_ExtractItems(var arr: TPointArray; items: TPointArray);');
+  AddFunction(@ExtractItemsTIA, 'procedure pp_ExtractItems(var arr: TIntegerArray; items: TIntegerArray); overload;');
+  AddFunction(@ExtractItemsTEA, 'procedure pp_ExtractItems(var arr: TExtendedArray; items: TExtendedArray); overload;');
+  AddFunction(@ExtractItemsTSA, 'procedure pp_ExtractItems(var arr: TStringArray; items: TStringArray); overload;');
+  AddFunction(@ExtractItemsTCA, 'procedure pp_ExtractItems(var arr: TCharArray; items: TCharArray); overload;');
+  AddFunction(@ExtractItemsTBoA, 'procedure pp_ExtractItems(var arr: TBoolArray; items: TBoolArray); overload;');
+  AddFunction(@ExtractItemsTBA, 'procedure pp_ExtractItems(var arr: TBoxArray; items: TBoxArray); overload;');
+  // filteritems
+  AddFunction(@FilterItemsTPA, 'procedure pp_FilterItems(var arr: TPointArray; items: TPointArray);');
+  AddFunction(@FilterItemsTIA, 'procedure pp_FilterItems(var arr: TIntegerArray; items: TIntegerArray); overload;');
+  AddFunction(@FilterItemsTEA, 'procedure pp_FilterItems(var arr: TExtendedArray; items: TExtendedArray); overload;');
+  AddFunction(@FilterItemsTSA, 'procedure pp_FilterItems(var arr: TStringArray; items: TStringArray); overload;');
+  AddFunction(@FilterItemsTCA, 'procedure pp_FilterItems(var arr: TCharArray; items: TCharArray); overload;');
+  AddFunction(@FilterItemsTBoA, 'procedure pp_FilterItems(var arr: TBoolArray; items: TBoolArray); overload;');
+  AddFunction(@FilterItemsTBA, 'procedure pp_FilterItems(var arr: TBoxArray; items: TBoxArray); overload;');
   // extracteveryx
   AddFunction(@ExtractEveryTPA, 'procedure pp_ExtractEvery(var arr: TPointArray; X: Integer);');
   AddFunction(@ExtractEveryTIA, 'procedure pp_ExtractEvery(var arr: TIntegerArray; X: Integer); overload;');
@@ -663,20 +691,28 @@ begin
   AddFunction(@FilterEveryExTBoA, 'procedure pp_FilterEvery(var arr: TBoolArray; offset: Integer; X: Integer); overload;');
   AddFunction(@FilterEveryExTBA, 'procedure pp_FilterEvery(var arr: TBoxArray; offset: Integer; X: Integer); overload;');
   // equals
-  AddFunction(@EqualsTPA, 'function pp_Equals(arr1, arr2: TPointArray): Boolean;');
-  AddFunction(@EqualsTIA, 'function pp_Equals(arr1, arr2: TIntegerArray): Boolean; overload;');
-  AddFunction(@EqualsTEA, 'function pp_Equals(arr1, arr2: TExtendedArray): Boolean; overload;');
-  AddFunction(@EqualsTSA, 'function pp_Equals(arr1, arr2: TStringArray): Boolean; overload;');
-  AddFunction(@EqualsTCA, 'function pp_Equals(arr1, arr2: TCharArray): Boolean; overload;');
-  AddFunction(@EqualsTBoA, 'function pp_Equals(arr1, arr2: TBoolArray): Boolean; overload;');
-  AddFunction(@EqualsTBA, 'function pp_Equals(arr1, arr2: TBoxArray): Boolean; overload;');
-  AddFunction(@EqualsATPA, 'function pp_Equals(arr1, arr2: T2DPointArray): Boolean; overload;');
-  AddFunction(@EqualsATIA, 'function pp_Equals(arr1, arr2: T2DIntegerArray): Boolean; overload;');
-  AddFunction(@EqualsATEA, 'function pp_Equals(arr1, arr2: T2DExtendedArray): Boolean; overload;');
-  AddFunction(@EqualsATSA, 'function pp_Equals(arr1, arr2: T2DStringArray): Boolean; overload;');
-  AddFunction(@EqualsATCA, 'function pp_Equals(arr1, arr2: T2DCharArray): Boolean; overload;');
-  AddFunction(@EqualsATBoA, 'function pp_Equals(arr1, arr2: T2DBoolArray): Boolean; overload;');
-  AddFunction(@EqualsATBA, 'function pp_Equals(arr1, arr2: T2DBoxArray): Boolean; overload;');
+  AddFunction(@EqualTPA, 'function pp_Equal(arr1, arr2: TPointArray): Boolean;');
+  AddFunction(@EqualTIA, 'function pp_Equal(arr1, arr2: TIntegerArray): Boolean; overload;');
+  AddFunction(@EqualTEA, 'function pp_Equal(arr1, arr2: TExtendedArray): Boolean; overload;');
+  AddFunction(@EqualTSA, 'function pp_Equal(arr1, arr2: TStringArray): Boolean; overload;');
+  AddFunction(@EqualTCA, 'function pp_Equal(arr1, arr2: TCharArray): Boolean; overload;');
+  AddFunction(@EqualTBoA, 'function pp_Equal(arr1, arr2: TBoolArray): Boolean; overload;');
+  AddFunction(@EqualTBA, 'function pp_Equal(arr1, arr2: TBoxArray): Boolean; overload;');
+  AddFunction(@EqualATPA, 'function pp_Equal(arr1, arr2: T2DPointArray): Boolean; overload;');
+  AddFunction(@EqualATIA, 'function pp_Equal(arr1, arr2: T2DIntegerArray): Boolean; overload;');
+  AddFunction(@EqualATEA, 'function pp_Equal(arr1, arr2: T2DExtendedArray): Boolean; overload;');
+  AddFunction(@EqualATSA, 'function pp_Equal(arr1, arr2: T2DStringArray): Boolean; overload;');
+  AddFunction(@EqualATCA, 'function pp_Equal(arr1, arr2: T2DCharArray): Boolean; overload;');
+  AddFunction(@EqualATBoA, 'function pp_Equal(arr1, arr2: T2DBoolArray): Boolean; overload;');
+  AddFunction(@EqualATBA, 'function pp_Equal(arr1, arr2: T2DBoxArray): Boolean; overload;');
+  // allequal
+  AddFunction(@AllEqualTPA, 'function pp_AllEqual(arr: TPointArray): Boolean;');
+  AddFunction(@AllEqualTIA, 'function pp_AllEqual(arr: TIntegerArray): Boolean; overload;');
+  AddFunction(@AllEqualTEA, 'function pp_AllEqual(arr: TExtendedArray): Boolean; overload;');
+  AddFunction(@AllEqualTSA, 'function pp_AllEqual(arr: TStringArray): Boolean; overload;');
+  AddFunction(@AllEqualTCA, 'function pp_AllEqual(arr: TCharArray): Boolean; overload;');
+  AddFunction(@AllEqualTBoA, 'function pp_AllEqual(arr: TBoolArray): Boolean; overload;');
+  AddFunction(@AllEqualTBA, 'function pp_AllEqual(arr: TBoxArray): Boolean; overload;');
   // random
   AddFunction(@RandomizeTPA, 'procedure pp_Randomize(var arr: TPointArray);');
   AddFunction(@RandomizeTIA, 'procedure pp_Randomize(var arr: TIntegerArray); overload;');

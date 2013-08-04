@@ -5,7 +5,7 @@
 [==============================================================================}
 
 // TPointArray
-function EqualsTPA(arr1, arr2: TPointArray): Boolean; callconv
+function EqualTPA(arr1, arr2: TPointArray): Boolean; callconv
 var
   h, i: Integer;
 begin
@@ -21,7 +21,7 @@ begin
 end;
 
 // TIntegerArray
-function EqualsTIA(arr1, arr2: TIntegerArray): Boolean; callconv
+function EqualTIA(arr1, arr2: TIntegerArray): Boolean; callconv
 var
   h, i: Integer;
 begin
@@ -37,7 +37,7 @@ begin
 end;
 
 // TExtendedArray
-function EqualsTEA(arr1, arr2: TExtendedArray): Boolean; callconv
+function EqualTEA(arr1, arr2: TExtendedArray): Boolean; callconv
 var
   h, i: Integer;
 begin
@@ -53,7 +53,7 @@ begin
 end;
 
 // TStringArray
-function EqualsTSA(arr1, arr2: TStringArray): Boolean; callconv
+function EqualTSA(arr1, arr2: TStringArray): Boolean; callconv
 var
   h, i: Integer;
 begin
@@ -69,7 +69,7 @@ begin
 end;
 
 // TCharArray
-function EqualsTCA(arr1, arr2: TCharArray): Boolean; callconv
+function EqualTCA(arr1, arr2: TCharArray): Boolean; callconv
 var
   h, i: Integer;
 begin
@@ -85,7 +85,7 @@ begin
 end;
 
 // TBoolArray
-function EqualsTBoA(arr1, arr2: TBoolArray): Boolean; callconv
+function EqualTBoA(arr1, arr2: TBoolArray): Boolean; callconv
 var
   h, i: Integer;
 begin
@@ -101,7 +101,7 @@ begin
 end;
 
 // TBoxArray
-function EqualsTBA(arr1, arr2: TBoxArray): Boolean; callconv
+function EqualTBA(arr1, arr2: TBoxArray): Boolean; callconv
 var
   h, i: Integer;
 begin
@@ -117,7 +117,7 @@ begin
 end;
 
 // T2DPointArray
-function EqualsATPA(arr1, arr2: T2DPointArray): Boolean; callconv
+function EqualATPA(arr1, arr2: T2DPointArray): Boolean; callconv
 var
   h, i, a, b: Integer;
 begin
@@ -139,7 +139,7 @@ begin
 end;
 
 // T2DIntegerArray
-function EqualsATIA(arr1, arr2: T2DIntegerArray): Boolean; callconv
+function EqualATIA(arr1, arr2: T2DIntegerArray): Boolean; callconv
 var
   h, i, a, b: Integer;
 begin
@@ -161,7 +161,7 @@ begin
 end;
 
 // T2DExtendedArray
-function EqualsATEA(arr1, arr2: T2DExtendedArray): Boolean; callconv
+function EqualATEA(arr1, arr2: T2DExtendedArray): Boolean; callconv
 var
   h, i, a, b: Integer;
 begin
@@ -183,7 +183,7 @@ begin
 end;
 
 // T2DStringArray
-function EqualsATSA(arr1, arr2: T2DStringArray): Boolean; callconv
+function EqualATSA(arr1, arr2: T2DStringArray): Boolean; callconv
 var
   h, i, a, b: Integer;
 begin
@@ -205,7 +205,7 @@ begin
 end;
 
 // T2DCharArray
-function EqualsATCA(arr1, arr2: T2DCharArray): Boolean; callconv
+function EqualATCA(arr1, arr2: T2DCharArray): Boolean; callconv
 var
   h, i, a, b: Integer;
 begin
@@ -227,7 +227,7 @@ begin
 end;
 
 // T2DBoolArray
-function EqualsATBoA(arr1, arr2: T2DBoolArray): Boolean; callconv
+function EqualATBoA(arr1, arr2: T2DBoolArray): Boolean; callconv
 var
   h, i, a, b: Integer;
 begin
@@ -249,7 +249,7 @@ begin
 end;
 
 // T2DBoxArray
-function EqualsATBA(arr1, arr2: T2DBoxArray): Boolean; callconv
+function EqualATBA(arr1, arr2: T2DBoxArray): Boolean; callconv
 var
   h, i, a, b: Integer;
 begin
