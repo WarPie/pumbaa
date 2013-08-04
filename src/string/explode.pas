@@ -6,29 +6,40 @@
 
 procedure StrExplode(d, str: string; var output: TStringArray); callconv
 var
-  p, i, l: Integer;
-begin
-  l := Length(d);
-  if ((l > 0) and (str <> '')) then
+  a, b, l, p, r, s: Integer;
+  m: Boolean;
+begin;
+  SetLength(output, 1);
+  l := Length(str);
+  s := Length(d);
+  if ((l > 0) and (s > 0)) then
   begin
-    i := 0;
-    SetLength(output, Length(str));
-    repeat
-      p := Pos(d, str);
-      if (p > 0) then
+    a := 1;
+    p := 1;
+    r := 0;
+    while ((a + (s - 1)) <= l) do
+    begin
+      for b := 1 to s do
       begin
-        output[i] := Copy(str, 1, (p - 1));
-        Delete(str, 1, ((p + l) - 1));
-        Inc(i);
+        m := (str[((a + b) - 1)] = d[b]);
+        if not m then
+          Break;
       end;
-    until (p = 0);
-    output[i] := Copy(str, 1, Length(str));
-    SetLength(output, (i + 1));
+      if m then
+      begin
+        output[r] := Copy(str, p, (a - p));
+        if (((a + s) - 1) = l) then
+          Exit;
+        p := (a + s);
+        a := ((a + s) - 1);
+        Inc(r);
+        SetLength(output, (r + 1));
+      end;
+      Inc(a);
+    end;
+    output[r] := Copy(str, p, ((l - p) + 1));
   end else
-  begin
-    SetLength(output, 1);
-    output[0] := str;
-  end;
+    output[0] := '';
 end;
 
 {==============================================================================]
@@ -39,33 +50,40 @@ end;
 
 procedure StrExplodeEx(d, str: string; limit: Integer; var output: TStringArray); callconv
 var
-  p, i, l: Integer;
-begin
-  l := Length(d);
-  if ((l > 0) and (str <> '') and (limit > 1)) then
+  a, b, l, p, r, s: Integer;
+  m: Boolean;
+begin;
+  SetLength(output, 1);
+  l := Length(str);
+  s := Length(d);
+  if ((l > 0) and (s > 0)) then
   begin
-    i := 0;
-    SetLength(output, Length(str));
-    repeat
-      if (i < (limit - 1)) then
+    a := 1;
+    p := 1;
+    r := 0;
+    while (((r + 1) < limit) and ((a + (s - 1)) <= l)) do
+    begin
+      for b := 1 to s do
       begin
-        p := Pos(d, str);
-        if (p > 0) then
-        begin
-          output[i] := Copy(str, 1, (p - 1));
-          Delete(str, 1, ((p + l) - 1));
-          Inc(i);
-        end;
-      end else
-        p := 0;
-    until (p = 0);
-    output[i] := Copy(str, 1, Length(str));
-    SetLength(output, (i + 1));
+        m := (str[((a + b) - 1)] = d[b]);
+        if not m then
+          Break;
+      end;
+      if m then
+      begin
+        output[r] := Copy(str, p, (a - p));
+        if (((a + s) - 1) = l) then
+          Exit;
+        p := (a + s);
+        a := ((a + s) - 1);
+        Inc(r);
+        SetLength(output, (r + 1));
+      end;
+      Inc(a);
+    end;
+    output[r] := Copy(str, p, ((l - p) + 1));
   end else
-  begin
-    SetLength(output, 1);
-    output[0] := str;
-  end;
+    output[0] := '';
 end;
 
 {==============================================================================]

@@ -759,7 +759,21 @@ begin
   AddFunction(@SwapATBoA, 'procedure pp_Swap(var arr1, arr2: T2DBoolArray); overload;');
   AddFunction(@SwapATBA, 'procedure pp_Swap(var arr1, arr2: T2DBoxArray); overload;');
   // partition
-  AddFunction(@PartitionTPA, 'procedure pp_Partition(arr: TPointArray; method: TPartitionMethod; x: Integer; var output: T2DPointArray);');
+  AddFunction(@PartitionTPA3, 'procedure pp_Partition(arr: TPointArray; var output: T2DPointArray);');
+  AddFunction(@PartitionTIA3, 'procedure pp_Partition(arr: TIntegerArray; var output: T2DIntegerArray); overload;');
+  AddFunction(@PartitionTEA3, 'procedure pp_Partition(arr: TExtendedArray; var output: T2DExtendedArray); overload;');
+  AddFunction(@PartitionTSA3, 'procedure pp_Partition(arr: TStringArray; var output: T2DStringArray); overload;');
+  AddFunction(@PartitionTCA3, 'procedure pp_Partition(arr: TCharArray; var output: T2DCharArray); overload;');
+  AddFunction(@PartitionTBoA3, 'procedure pp_Partition(arr: TBoolArray; var output: T2DBoolArray); overload;');
+  AddFunction(@PartitionTBA3, 'procedure pp_Partition(arr: TBoxArray; var output: T2DBoxArray); overload;');
+  AddFunction(@PartitionTPA2, 'procedure pp_Partition(arr: TPointArray; method: TPartitionMethod; var output: T2DPointArray); overload;');
+  AddFunction(@PartitionTIA2, 'procedure pp_Partition(arr: TIntegerArray; method: TPartitionMethod; var output: T2DIntegerArray); overload;');
+  AddFunction(@PartitionTEA2, 'procedure pp_Partition(arr: TExtendedArray; method: TPartitionMethod; var output: T2DExtendedArray); overload;');
+  AddFunction(@PartitionTSA2, 'procedure pp_Partition(arr: TStringArray; method: TPartitionMethod; var output: T2DStringArray); overload;');
+  AddFunction(@PartitionTCA2, 'procedure pp_Partition(arr: TCharArray; method: TPartitionMethod; var output: T2DCharArray); overload;');
+  AddFunction(@PartitionTBoA2, 'procedure pp_Partition(arr: TBoolArray; method: TPartitionMethod; var output: T2DBoolArray); overload;');
+  AddFunction(@PartitionTBA2, 'procedure pp_Partition(arr: TBoxArray; method: TPartitionMethod; var output: T2DBoxArray); overload;');
+  AddFunction(@PartitionTPA, 'procedure pp_Partition(arr: TPointArray; method: TPartitionMethod; x: Integer; var output: T2DPointArray); overload;');
   AddFunction(@PartitionTIA, 'procedure pp_Partition(arr: TIntegerArray; method: TPartitionMethod; x: Integer; var output: T2DIntegerArray); overload;');
   AddFunction(@PartitionTEA, 'procedure pp_Partition(arr: TExtendedArray; method: TPartitionMethod; x: Integer; var output: T2DExtendedArray); overload;');
   AddFunction(@PartitionTSA, 'procedure pp_Partition(arr: TStringArray; method: TPartitionMethod; x: Integer; var output: T2DStringArray); overload;');

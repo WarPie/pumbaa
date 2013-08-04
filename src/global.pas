@@ -79,7 +79,7 @@ type
   @contributors: Janilabo, slacky
 [==============================================================================}
 type
-  TPartitionMethod = (pm_BySize, pm_ByAmount);
+  TPartitionMethod = (pm_BySize, pm_ByAmount, pm_ByItem);
 
 {==============================================================================]
   @action: Default distance method, useful for TPoint distance calculation.
@@ -107,7 +107,7 @@ const
 
 procedure AddGlobalTypes;
 begin
-  AddType('TPartitionMethod', '(pm_BySize, pm_ByAmount);');
+  AddType('TPartitionMethod', '(pm_BySize, pm_ByAmount, pm_ByItem);');
   AddType('T2DBoolArray', 'array of TBoolArray;');
   AddType('T2DBoxArray', 'array of TBoxArray');
   AddType('TCharArray', 'array of Char;');
