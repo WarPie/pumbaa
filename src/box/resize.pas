@@ -6,7 +6,7 @@
  @contributors: Janilabo, slacky
 [==============================================================================}
 
-procedure ResizeBoxEx(var bx: TBox; sizeChange: Integer; method: TResizeMethod); callconv
+procedure BoxResizeEx(var bx: TBox; sizeChange: Integer; method: TResizeMethod); callconv
   function Box(X1, Y1, X2, Y2: Integer): TBox;
   begin
     Result.X1 := X1;
@@ -38,7 +38,7 @@ end;
  @contributors: Janilabo, slacky
 [==============================================================================}
 
-procedure ResizeBox(var bx: TBox; sizeChange: Integer); callconv inline;
+procedure BoxResize(var bx: TBox; sizeChange: Integer); callconv inline;
 begin
-  ResizeBoxEx(bx, sizeChange, rmFull);
+  BoxResizeEx(bx, sizeChange, rmFull);
 end;

@@ -50,6 +50,12 @@ type
   TResizeMethod = (rmFull, rmWidth, rmHeight, rmUp, rmDown, rmLeft, rmRight, rmTopLeft, rmTopRight, rmBottomLeft, rmBottomRight);
 
 {==============================================================================]
+  Explanation: Centering methods for BoxCentralization.
+[==============================================================================}
+type
+  TCenterMethod = (cmWidthwise, cmHeightwise, cmBoth);
+
+{==============================================================================]
   @action: Trimming sides for string/TSA trimming.
   @note: None
   @contributors: Janilabo, slacky
@@ -118,6 +124,7 @@ begin
   AddType('TScanDirections', '(sd4Ways, sd8Ways);');
   AddType('TTrimSide', '(ts_Both, ts_Left, ts_Start, ts_Right, ts_End);');
   AddType('TResizeMethod', '(rmFull, rmWidth, rmHeight, rmUp, rmDown, rmLeft, rmRight, rmTopLeft, rmTopRight, rmBottomLeft, rmBottomRight);');
+  AddType('TCenterMethod', '(cmWidthwise, cmHeightwise, cmBoth);');
   AddType('TSortOrder', '(so_LowToHigh, so_HighToLow);');
   AddType('TSortAlgorithm', '(sa_BubbleSort, sa_OptimizedBubbleSort,' + #32 +
                              'sa_HeapSort, sa_InsertionSort, sa_ShellSort,' + #32 +

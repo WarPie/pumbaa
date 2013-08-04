@@ -4,16 +4,17 @@
     <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="171">
+    <Units Count="177">
       <Unit0>
         <Filename Value="pumbaa.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="pumbaa"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="49" Y="21"/>
-        <UsageCount Value="129"/>
+        <CursorPos X="32" Y="11"/>
+        <UsageCount Value="132"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -43,10 +44,12 @@
       <Unit4>
         <Filename Value="src\global.pas"/>
         <UnitName Value="global"/>
+        <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="56" Y="82"/>
-        <UsageCount Value="28"/>
+        <TopLine Value="106"/>
+        <CursorPos X="68" Y="127"/>
+        <UsageCount Value="29"/>
+        <Loaded Value="True"/>
       </Unit4>
       <Unit5>
         <Filename Value="src\array\slice.pas"/>
@@ -1188,36 +1191,34 @@
         <UnitName Value="resize"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="47" Y="10"/>
+        <CursorPos X="25" Y="35"/>
         <UsageCount Value="10"/>
       </Unit147>
       <Unit148>
         <Filename Value="src\box.pas"/>
         <UnitName Value="box"/>
+        <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="27" Y="6"/>
-        <UsageCount Value="19"/>
+        <TopLine Value="4"/>
+        <CursorPos X="33" Y="15"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
       </Unit148>
       <Unit149>
         <Filename Value="src\string.pas"/>
         <UnitName Value="string"/>
-        <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
         <TopLine Value="25"/>
         <CursorPos X="174" Y="42"/>
         <UsageCount Value="20"/>
-        <Loaded Value="True"/>
       </Unit149>
       <Unit150>
         <Filename Value="src\string\various.pas"/>
         <UnitName Value="various"/>
-        <EditorIndex Value="6"/>
         <WindowIndex Value="0"/>
         <TopLine Value="529"/>
         <CursorPos X="5" Y="545"/>
         <UsageCount Value="20"/>
-        <Loaded Value="True"/>
       </Unit150>
       <Unit151>
         <Filename Value="C:\lazarus\fpc\2.6.1\source\packages\amunits\examples\otherlibs\string.pas"/>
@@ -1270,12 +1271,10 @@
       <Unit157>
         <Filename Value="src\string\explode.pas"/>
         <UnitName Value="explode"/>
-        <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="161"/>
         <CursorPos X="5" Y="161"/>
         <UsageCount Value="13"/>
-        <Loaded Value="True"/>
       </Unit157>
       <Unit158>
         <Filename Value="src\string\indentation.pas"/>
@@ -1288,11 +1287,10 @@
       <Unit159>
         <Filename Value="src\string\line.pas"/>
         <UnitName Value="line"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="117"/>
-        <CursorPos X="17" Y="117"/>
+        <TopLine Value="4"/>
+        <CursorPos X="20" Y="16"/>
         <UsageCount Value="13"/>
         <Loaded Value="True"/>
       </Unit159>
@@ -1371,33 +1369,74 @@
       <Unit169>
         <Filename Value="src\string\count.pas"/>
         <UnitName Value="count"/>
-        <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
         <TopLine Value="79"/>
         <CursorPos X="24" Y="82"/>
         <UsageCount Value="11"/>
-        <Loaded Value="True"/>
       </Unit169>
       <Unit170>
         <Filename Value="src\string\replace.pas"/>
         <UnitName Value="replace"/>
-        <EditorIndex Value="5"/>
         <WindowIndex Value="0"/>
         <TopLine Value="43"/>
         <CursorPos X="31" Y="52"/>
         <UsageCount Value="11"/>
-        <Loaded Value="True"/>
       </Unit170>
+      <Unit171>
+        <Filename Value="..\GitHub\pumbaa\src\global.pas"/>
+        <UnitName Value="global"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="76"/>
+        <CursorPos X="1" Y="84"/>
+        <UsageCount Value="10"/>
+      </Unit171>
+      <Unit172>
+        <Filename Value="..\GitHub\pumbaa\src\box\centralization.pas"/>
+        <UnitName Value="centralization"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="9"/>
+        <CursorPos X="65" Y="32"/>
+        <UsageCount Value="10"/>
+      </Unit172>
+      <Unit173>
+        <Filename Value="..\GitHub\pumbaa\src\box.pas"/>
+        <UnitName Value="box"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="10"/>
+      </Unit173>
+      <Unit174>
+        <Filename Value="..\GitHub\pumbaa\src\box\resize.pas"/>
+        <UnitName Value="resize"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="10"/>
+      </Unit174>
+      <Unit175>
+        <Filename Value="src\box\centralization.pas"/>
+        <UnitName Value="centralization"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="10"/>
+      </Unit175>
+      <Unit176>
+        <Filename Value="src\box\various.pas"/>
+        <UnitName Value="various"/>
+        <EditorIndex Value="4"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="294"/>
+        <CursorPos X="24" Y="296"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit176>
     </Units>
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="1" HistoryIndex="0">
-      <Position1>
-        <Filename Value="src\string\replace.pas"/>
-        <Caret Line="46" Column="12" TopLine="40"/>
-      </Position1>
-    </JumpHistory>
+    <JumpHistory Count="0" HistoryIndex="-1"/>
   </ProjectSession>
   <EditorMacros Count="0"/>
 </CONFIG>
