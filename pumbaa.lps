@@ -4,17 +4,16 @@
     <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="180">
+    <Units Count="183">
       <Unit0>
         <Filename Value="pumbaa.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="pumbaa"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="32" Y="11"/>
-        <UsageCount Value="137"/>
+        <TopLine Value="70"/>
+        <CursorPos X="26" Y="109"/>
+        <UsageCount Value="142"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -748,10 +747,13 @@
       <Unit92>
         <Filename Value="src\mathematics.pas"/>
         <UnitName Value="mathematics"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="40"/>
-        <CursorPos X="30" Y="7"/>
+        <TopLine Value="31"/>
+        <CursorPos X="147" Y="49"/>
         <UsageCount Value="17"/>
+        <Loaded Value="True"/>
       </Unit92>
       <Unit93>
         <Filename Value="src\mathematics\angle.pas"/>
@@ -764,10 +766,12 @@
       <Unit94>
         <Filename Value="src\mathematics\distance.pas"/>
         <UnitName Value="distance"/>
+        <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="21"/>
-        <CursorPos X="38" Y="36"/>
-        <UsageCount Value="12"/>
+        <TopLine Value="48"/>
+        <CursorPos X="38" Y="190"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
       </Unit94>
       <Unit95>
         <Filename Value="src\point\step.pas"/>
@@ -1052,18 +1056,22 @@
       <Unit130>
         <Filename Value="src\integer.pas"/>
         <UnitName Value="integer"/>
+        <EditorIndex Value="7"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="37" Y="19"/>
+        <TopLine Value="16"/>
+        <CursorPos X="6" Y="41"/>
         <UsageCount Value="19"/>
+        <Loaded Value="True"/>
       </Unit130>
       <Unit131>
         <Filename Value="src\integer\calculation.pas"/>
         <UnitName Value="calculation"/>
+        <EditorIndex Value="8"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="165"/>
+        <TopLine Value="1"/>
         <CursorPos X="55" Y="181"/>
         <UsageCount Value="10"/>
+        <Loaded Value="True"/>
       </Unit131>
       <Unit132>
         <Filename Value="src\integer\range.pas"/>
@@ -1443,16 +1451,65 @@
       <Unit179>
         <Filename Value="src\point\distance.pas"/>
         <UnitName Value="distance"/>
+        <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="55"/>
-        <CursorPos X="15" Y="59"/>
-        <UsageCount Value="10"/>
+        <TopLine Value="75"/>
+        <CursorPos X="24" Y="80"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
       </Unit179>
+      <Unit180>
+        <Filename Value="src\extended.pas"/>
+        <UnitName Value="extended"/>
+        <EditorIndex Value="4"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="13" Y="2"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit180>
+      <Unit181>
+        <Filename Value="src\extended\calculation.pas"/>
+        <UnitName Value="calculation"/>
+        <EditorIndex Value="5"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="7" Y="48"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit181>
+      <Unit182>
+        <Filename Value="src\extended\range.pas"/>
+        <UnitName Value="range"/>
+        <EditorIndex Value="6"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="28"/>
+        <CursorPos X="61" Y="7"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit182>
     </Units>
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="0" HistoryIndex="-1"/>
+    <JumpHistory Count="4" HistoryIndex="3">
+      <Position1>
+        <Filename Value="src\mathematics\distance.pas"/>
+        <Caret Line="55" Column="39" TopLine="37"/>
+      </Position1>
+      <Position2>
+        <Filename Value="src\extended\calculation.pas"/>
+        <Caret Line="1" Column="6" TopLine="1"/>
+      </Position2>
+      <Position3>
+        <Filename Value="src\extended\calculation.pas"/>
+        <Caret Line="6" Column="12" TopLine="1"/>
+      </Position3>
+      <Position4>
+        <Filename Value="src\extended\range.pas"/>
+        <Caret Line="1" Column="3" TopLine="1"/>
+      </Position4>
+    </JumpHistory>
   </ProjectSession>
   <EditorMacros Count="0"/>
 </CONFIG>

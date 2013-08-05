@@ -45,6 +45,10 @@ begin
   AddFunction(@Distance2, 'function pp_Distance(pt1, pt2: TPoint; rounding: TRoundingMethod): Extended; overload;');
   AddFunction(@Distance3, 'function pp_Distance(pt1, pt2: TPoint; method: TDistanceMethod): Extended; overload;');
   AddFunction(@DistanceEx, 'function pp_Distance(pt1, pt2: TPoint; method: TDistanceMethod; rounding: TRoundingMethod): Extended; overload;');
+  AddFunction(@Distances, 'procedure pp_Distances(TPA, pt: TPoint; var output: TExtendedArray);');
+  AddFunction(@Distances2, 'procedure pp_Distances(TPA: TPointArray; pt: TPoint; rounding: TRoundingMethod; var output: TExtendedArray); overload;');
+  AddFunction(@Distances3, 'procedure pp_Distances(TPA: TPointArray; pt: TPoint; method: TDistanceMethod; var output: TExtendedArray); overload;');
+  AddFunction(@DistancesEx, 'procedure pp_Distances(TPA: TPointArray; pt: TPoint; method: TDistanceMethod; rounding: TRoundingMethod; var output: TExtendedArray); overload;');
   // angle
   AddFunction(@Angle, 'function pp_Angle(pt1, pt2: TPoint; method: TAngleMethod): Extended;');
   // difference

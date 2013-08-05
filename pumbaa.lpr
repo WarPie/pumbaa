@@ -83,6 +83,7 @@ end;
 {$I src\sorting.pas}
 {$I src\array.pas}
 {$I src\integer.pas}
+{$I src\extended.pas}
 {$I src\string.pas}
 {$I src\box.pas}
 {$I src\point.pas}
@@ -105,6 +106,7 @@ begin
     AddSortingFunctions;
     AddArrayFunctions;
     AddIntegerFunctions;
+    AddExtendedFunctions;
     AddStringFunctions;
     AddBoxFunctions;
     AddPointFunctions;
