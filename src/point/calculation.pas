@@ -1,7 +1,7 @@
 {==============================================================================]
- @action: Returns the calculated density from given TPA.
- @note: None
- @contributors: Janilabo, slacky
+  @action: Returns the calculated density from given TPA.
+  @note: None
+  @contributors: Janilabo, slacky
 [==============================================================================}
 
 function TPADensity(TPA: TPointArray): Extended; callconv
@@ -49,9 +49,9 @@ begin
 end;
 
 {==============================================================================]
- @action: Returns the center point by TPA bounds as TPoint.
- @note: None
- @contributors: Janilabo, slacky
+  @action: Returns the center point by TPA bounds as TPoint.
+  @note: None
+  @contributors: Janilabo, slacky
 [==============================================================================}
 
 function TPACenter(TPA: TPointArray): TPoint; callconv
@@ -86,9 +86,9 @@ begin
 end;
 
 {==============================================================================]
- @action: Returns the arithmetic mean point by TPA items.
- @note: None
- @contributors: Janilabo, slacky
+  @action: Returns the arithmetic mean point by TPA items.
+  @note: None
+  @contributors: Janilabo, slacky
 [==============================================================================}
 
 function TPAMean(TPA: TPointArray): TPoint; callconv
@@ -107,6 +107,32 @@ begin
       y := (y + (Extended(TPA[i].Y) / (h + 1)));
     end;
     Result := Point(Round(x), Round(y));
+  end else
+    Result := Point(0, 0);
+end;
+
+{==============================================================================]
+  @action: Returns the middle point from TPA.
+  @note: None
+  @contributors: Janilabo, slacky
+[==============================================================================}
+function TPAMiddle(TPA: TPointArray): TPoint; callconv
+var
+  l, i: Integer;
+begin
+  l := Length(TPA);
+  if (l > 0) then
+  begin
+    Result := TPA[0];
+    if (l > 1) then
+    begin
+      for i := 1 to (l - 1) do
+      begin
+        Result.X := (Result.X + TPA[i].X);
+        Result.Y := (Result.Y + TPA[i].Y);
+      end;
+      Result := Point((Result.X div l), (Result.Y div l));
+    end;
   end else
     Result := Point(0, 0);
 end;

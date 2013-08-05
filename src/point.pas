@@ -15,6 +15,7 @@
 {$I point\edge.pas}
 {$I point\grid.pas}
 {$I point\rotate.pas}
+{$I point\distance.pas}
 
 procedure AddPointFunctions;
 begin
@@ -70,6 +71,7 @@ begin
   AddFunction(@TPADensity, 'function pp_TPADensity(TPA: TPointArray): Extended;');
   AddFunction(@TPAMean, 'function pp_TPAMean(TPA: TPointArray): TPoint;');
   AddFunction(@TPACenter, 'function pp_TPACenter(TPA: TPointArray): TPoint;');
+  AddFunction(@TPAMiddle, 'function pp_TPAMiddle(TPA: TPointArray): TPoint;');
   // extract
   AddFunction(@TPAExtractBoxes, 'procedure pp_TPAExtractBoxes(var TPA: TPointArray; boxes: TBoxArray);');
   AddFunction(@TPAExtractPoints, 'procedure pp_TPAExtractPoints(var TPA: TPointArray; points: TPointArray);');
@@ -107,4 +109,9 @@ begin
   // rotate
   AddFunction(@TPARotate, 'procedure pp_TPARotate(var TPA: TPointArray; center: TPoint; angle: Extended);');
   AddFunction(@TPARotateEx, 'procedure pp_TPARotate(var TPA: TPointArray; center: TPoint; angle: Extended; method: TAngleMethod); overload;');
+  // distance
+  AddFunction(@TPADistanceToPoint2, 'procedure pp_TPADistanceTo(TPA: TPointArray; target: TPoint; var minDist, maxDist: Extended);');
+  AddFunction(@TPADistanceToPoint, 'procedure pp_TPADistanceTo(TPA: TPointArray; target: TPoint; var minDist, maxDist: Extended; method: TDistanceMethod); overload;');
+  AddFunction(@TPADistanceToPointEx2, 'procedure pp_TPADistanceTo(TPA: TPointArray; target: TPoint; var minDist, maxDist: Extended; var minPoint, maxPoint: TPoint); overload;');
+  AddFunction(@TPADistanceToPointEx, 'procedure pp_TPADistanceTo(TPA: TPointArray; target: TPoint; var minDist, maxDist: Extended; var minPoint, maxPoint: TPoint; method: TDistanceMethod); overload;');
 end;

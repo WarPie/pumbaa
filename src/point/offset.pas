@@ -1,7 +1,7 @@
 {==============================================================================]
- @action: Offsets pt with radius & angle. Radius is based on Euclidean distance!
- @note: Supports custom angle methods with TAngleMethod.
- @contributors: Janilabo, slacky
+  @action: Offsets pt with radius & angle. Radius is based on Euclidean distance!
+  @note: Supports custom angle methods with TAngleMethod.
+  @contributors: Janilabo, slacky
 [==============================================================================}
 
 procedure OffsetPointEx(var pt: TPoint; radius, angle: Extended; method: TAngleMethod); callconv
@@ -11,9 +11,9 @@ begin
 end;
 
 {==============================================================================]
- @action: Offsets pt with radius & angle. Radius is based on Euclidean distance!
- @note: Based on default angle method! (Degrees)
- @contributors: Janilabo, slacky
+  @action: Offsets pt with radius & angle. Radius is based on Euclidean distance!
+  @note: Based on default angle method! (Degrees)
+  @contributors: Janilabo, slacky
 [==============================================================================}
 
 procedure OffsetPointEx2(var pt: TPoint; radius, angle: Extended); callconv
@@ -22,9 +22,9 @@ begin
 end;
 
 {==============================================================================]
- @action: Offsets TPA using offset point.
- @note: None
- @contributors: Janilabo, slacky
+  @action: Offsets TPA using offset point.
+  @note: None
+  @contributors: Janilabo, slacky
 [==============================================================================}
 
 procedure OffsetPoint(var pt: TPoint; offset: TPoint); callconv
@@ -34,9 +34,9 @@ begin
 end;
 
 {==============================================================================]
- @action: Stores the offset from pt1 to pt2 to radius and angle. Radius is based on Euclidean distance!
- @note: Supports custom angle methods with TAngleMethod.
- @contributors: Janilabo, slacky
+  @action: Stores the offset from pt1 to pt2 to radius and angle. Radius is based on Euclidean distance!
+  @note: Supports custom angle methods with TAngleMethod.
+  @contributors: Janilabo, slacky
 [==============================================================================}
 
 procedure GetOffsetFromPointsEx(pt1, pt2: TPoint; var radius, angle: Extended; method: TAngleMethod); callconv
@@ -56,9 +56,9 @@ begin
 end;
 
 {==============================================================================]
- @action: Stores the offset from pt1 to pt2 to radius and angle. Radius is based on Euclidean distance!
- @note: Based on default angle method! (Degrees)
- @contributors: Janilabo, slacky
+  @action: Stores the offset from pt1 to pt2 to radius and angle. Radius is based on Euclidean distance!
+  @note: Based on default angle method! (Degrees)
+  @contributors: Janilabo, slacky
 [==============================================================================}
 
 procedure GetOffsetFromPoints(pt1, pt2: TPoint; var radius, angle: Extended); callconv
@@ -67,9 +67,9 @@ begin
 end;
 
 {==============================================================================]
- @action: Offsets TPA using offset point.
- @note: None
- @contributors: Janilabo, slacky
+  @action: Offsets TPA using offset point.
+  @note: None
+  @contributors: Janilabo, slacky
 [==============================================================================}
 
 procedure TPAOffset(var TPA: TPointArray; offset: TPoint); callconv
@@ -85,9 +85,9 @@ begin
 end;
 
 {==============================================================================]
- @action: Offsets TPA using radius & angle. Radius is based on Euclidean distance!
- @note: Supports custom angle methods with TAngleMethod.
- @contributors: Janilabo, slacky
+  @action: Offsets TPA using radius & angle. Radius is based on Euclidean distance!
+  @note: Supports custom angle methods with TAngleMethod.
+  @contributors: Janilabo, slacky
 [==============================================================================}
 
 procedure TPAOffsetEx(var TPA: TPointArray; radius, angle: Extended; method: TAngleMethod); callconv
@@ -104,9 +104,9 @@ begin
 end;
 
 {==============================================================================]
- @action: Offsets TPA using radius & angle. Radius is based on Euclidean distance!
- @note: Based on default angle method! (Degrees)
- @contributors: Janilabo, slacky
+  @action: Offsets TPA using radius & angle. Radius is based on Euclidean distance!
+  @note: Based on default angle method! (Degrees)
+  @contributors: Janilabo, slacky
 [==============================================================================}
 
 procedure TPAOffsetEx2(var TPA: TPointArray; radius, angle: Extended); callconv

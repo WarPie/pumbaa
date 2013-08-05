@@ -15,7 +15,7 @@ type
   @contributors: Janilabo, slacky
 [==============================================================================}
 type
-  TDistanceMethod = (dm_Euclidean, dm_Euclidean2, dm_Manhattan, dm_Chebyshev);
+  TDistanceMethod = (dm_Euclidean, dm_Euclidean2, dm_SquaredEuclidean, dm_Manhattan, dm_Chebyshev);
 
 {==============================================================================]
   @action: Used for calculating angles, for example: point A to point B.
@@ -118,7 +118,7 @@ begin
   AddType('T2DBoxArray', 'array of TBoxArray');
   AddType('TCharArray', 'array of Char;');
   AddType('T2DCharArray', 'array of TCharArray');
-  AddType('TDistanceMethod', '(dm_Euclidean, dm_Euclidean2, dm_Manhattan, dm_Chebyshev);');
+  AddType('TDistanceMethod', '(dm_Euclidean, dm_Euclidean2, dm_SquaredEuclidean, dm_Manhattan, dm_Chebyshev);');
   AddType('TAngleMethod', '(am_Degrees, am_Radians, am_Compass);');
   AddType('TRoundingMethod', '(rm_None, rm_Round, rm_Floor, rm_Ceil, rm_Trunc);');
   AddType('TScanDirections', '(sd4Ways, sd8Ways);');
