@@ -15,6 +15,8 @@ begin
   AddFunction(@TIADensity, 'function pp_TIADensity(TIA: TIntegerArray): Extended;');
   AddFunction(@TIAMean, 'function pp_TIAMean(TIA: TIntegerArray): Extended;');
   AddFunction(@TIASum, 'function pp_TIASum(TIA: TIntegerArray): Int64;');
+  AddFunction(@TIAMin, 'function pp_TIAMin(TIA: TIntegerArray): Integer;');
+  AddFunction(@TIAMax, 'function pp_TIAMax(TIA: TIntegerArray): Integer;');
   // range
   AddFunction(@TIAByRange, 'procedure pp_TIAByRange(aStart, aFinish: Integer; var output: TIntegerArray);');
   AddFunction(@TIAByRange2bit, 'procedure pp_TIAByRange2bit(aStart, aFinish: Integer; var output: TIntegerArray);');

@@ -319,3 +319,107 @@ begin
   end else
     Result := False;
 end;
+
+{==============================================================================]
+  @action: Returns the bounds of TBA.
+  @note: Returns true if constraints were set to bx.
+  @contributors: Janilabo, slacky
+[==============================================================================}
+
+function TBABounds(TBA: TBoxArray): TBox; callconv
+var
+  h, i: Integer;
+begin
+  h := High(TBA);
+  if (h > -1) then
+  begin
+    Result.X1 := Min(TBA[0].X1, TBA[0].X2);
+    Result.Y1 := Min(TBA[0].Y1, TBA[0].Y2);
+    Result.X2 := Max(TBA[0].X1, TBA[0].X2);
+    Result.Y2 := Max(TBA[0].Y1, TBA[0].Y2);
+    if (h > 0) then
+    for i := 1 to h do
+    begin
+      if (TBA[i].X1 < Result.X1) then
+        Result.X1 := Integer(TBA[i].X1);
+      if (TBA[i].X2 < Result.X1) then
+        Result.X1 := Integer(TBA[i].X2);
+      if (TBA[i].Y1 < Result.Y1) then
+        Result.Y1 := Integer(TBA[i].Y1);
+      if (TBA[i].Y2 < Result.Y1) then
+        Result.Y1 := Integer(TBA[i].Y2);
+      if (TBA[i].X2 > Result.X2) then
+        Result.X2 := Integer(TBA[i].X2);
+      if (TBA[i].X1 > Result.X2) then
+        Result.X2 := Integer(TBA[i].X1);
+      if (TBA[i].Y2 > Result.Y2) then
+        Result.Y2 := Integer(TBA[i].Y2);
+      if (TBA[i].Y1 > Result.Y2) then
+        Result.Y2 := Integer(TBA[i].Y1);
+    end;
+  end else
+  begin
+    Result.X1 := 0;
+    Result.Y1 := 0;
+    Result.X2 := 0;
+    Result.Y2 := 0;
+  end;
+end;
+
+{==============================================================================]
+  Explanation: Outputs center points from all TBA indexes.
+               Adds randomness to the points, if you set XOffsetRadius or/and YOffsetRadius HIGHER than 0.
+[==============================================================================}
+procedure TBACenterPointsEx(TBA: TBoxArray; XOffsetRadius, YOffsetRadius: Integer; var output: TPointArray); callconv
+var
+  h, i: Integer;
+begin
+  h := High(TBA);
+  if (h > -1) then
+  begin
+    SetLength(output, (h + 1));
+    if ((XOffsetRadius > 0) or (YOffsetRadius > 0)) then
+    begin
+      if (XOffsetRadius < 0) then
+        XOffsetRadius := 0;
+      if (YOffsetRadius < 0) then
+        YOffsetRadius := 0;
+      for i := 0 to h do
+      begin
+        if ((TBA[i].X1 <= TBA[i].X2) and (TBA[i].Y1 <= TBA[i].Y2)) then
+          output[i] := Point(Round(TBA[i].X1 + ((TBA[i].X2 - TBA[i].X1) div 2)), Round(TBA[i].Y1 + ((TBA[i].Y2 - TBA[i].Y1) div 2)))
+        else
+          output[i] := Point(0, 0);
+        output[i].X := (output[i].X + RandomRange(-XOffsetRadius, (XOffsetRadius + 1)));
+        output[i].Y := (output[i].Y + RandomRange(-YOffsetRadius, (YOffsetRadius + 1)));
+      end;
+    end else
+      for i := 0 to h do
+        if ((TBA[i].X1 <= TBA[i].X2) and (TBA[i].Y1 <= TBA[i].Y2)) then
+          output[i] := Point(Round(TBA[i].X1 + ((TBA[i].X2 - TBA[i].X1) div 2)), Round(TBA[i].Y1 + ((TBA[i].Y2 - TBA[i].Y1) div 2)))
+        else
+          output[i] := Point(0, 0);
+  end else
+    SetLength(output, 0);
+end;
+
+{==============================================================================]
+  Explanation: Returns center points from all TBA indexes.
+               Results will be without randomness. So, "perfect" center points!
+[==============================================================================}
+procedure TBACenterPoints(TBA: TBoxArray; var output: TPointArray); callconv
+var
+  h, i: Integer;
+begin
+  h := High(TBA);
+  if (h > -1) then
+  begin
+    SetLength(output, (h + 1));
+    for i := 0 to h do
+      if ((TBA[i].X1 <= TBA[i].X2) and (TBA[i].Y1 <= TBA[i].Y2)) then
+        output[i] := Point(Round(TBA[i].X1 + ((TBA[i].X2 - TBA[i].X1) div 2)), Round(TBA[i].Y1 + ((TBA[i].Y2 - TBA[i].Y1) div 2)))
+      else
+        output[i] := Point(0, 0);
+  end else
+    SetLength(output, 0);
+end;

@@ -149,3 +149,47 @@ begin
   for i := 0 to h do
     Result := (Result + TIA[i]);
 end;
+
+{==============================================================================]
+ @action: Returns the smallest value from given TIA.
+ @note: None
+ @contributors: Janilabo, slacky
+[==============================================================================}
+
+function TIAMin(TIA: TIntegerArray): Integer; callconv
+var
+  h, i: Integer;
+begin
+  h := High(TIA);
+  if (h > -1) then
+  begin
+    Result := TIA[0];
+    if (h > 0) then
+    for i := 1 to h do
+      if (TIA[i] < Result) then
+        Result := TIA[i];
+  end else
+    Result := 0;
+end;
+
+{==============================================================================]
+ @action: Returns the biggest value from given TIA.
+ @note: None
+ @contributors: Janilabo, slacky
+[==============================================================================}
+
+function TIAMax(TIA: TIntegerArray): Integer; callconv
+var
+  h, i: Integer;
+begin
+  h := High(TIA);
+  if (h > -1) then
+  begin
+    Result := TIA[0];
+    if (h > 0) then
+    for i := 1 to h do
+      if (TIA[i] > Result) then
+        Result := TIA[i];
+  end else
+    Result := 0;
+end;
