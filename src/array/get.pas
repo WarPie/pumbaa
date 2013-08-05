@@ -9,11 +9,11 @@ procedure GetTPA(arr: TPointArray; IDs: TIntegerArray; var output: TPointArray);
 var
   i, h, h2, r: Integer;
 begin
+  r := 0;
   h := High(arr);
   h2 := High(IDs);
   if ((h2 > -1) and (h > -1)) then
   begin
-    r := 0;
     SetLength(output, (h2 + 1));
     for i := 0 to h2 do
       if ((IDs[i] <= h) and (IDs[i] > -1)) then
@@ -30,11 +30,11 @@ procedure GetTIA(arr: TIntegerArray; IDs: TIntegerArray; var output: TIntegerArr
 var
   i, h, h2, r: Integer;
 begin
+  r := 0;
   h := High(arr);
   h2 := High(IDs);
   if ((h2 > -1) and (h > -1)) then
   begin
-    r := 0;
     SetLength(output, (h2 + 1));
     for i := 0 to h2 do
       if ((IDs[i] <= h) and (IDs[i] > -1)) then
@@ -51,11 +51,11 @@ procedure GetTEA(arr: TExtendedArray; IDs: TIntegerArray; var output: TExtendedA
 var
   i, h, h2, r: Integer;
 begin
+  r := 0;
   h := High(arr);
   h2 := High(IDs);
   if ((h2 > -1) and (h > -1)) then
   begin
-    r := 0;
     SetLength(output, (h2 + 1));
     for i := 0 to h2 do
       if ((IDs[i] <= h) and (IDs[i] > -1)) then
@@ -72,11 +72,11 @@ procedure GetTSA(arr: TStringArray; IDs: TIntegerArray; var output: TStringArray
 var
   i, h, h2, r: Integer;
 begin
+  r := 0;
   h := High(arr);
   h2 := High(IDs);
   if ((h2 > -1) and (h > -1)) then
   begin
-    r := 0;
     SetLength(output, (h2 + 1));
     for i := 0 to h2 do
       if ((IDs[i] <= h) and (IDs[i] > -1)) then
@@ -93,11 +93,11 @@ procedure GetTCA(arr: TCharArray; IDs: TIntegerArray; var output: TCharArray); c
 var
   i, h, h2, r: Integer;
 begin
+  r := 0;
   h := High(arr);
   h2 := High(IDs);
   if ((h2 > -1) and (h > -1)) then
   begin
-    r := 0;
     SetLength(output, (h2 + 1));
     for i := 0 to h2 do
       if ((IDs[i] <= h) and (IDs[i] > -1)) then
@@ -114,11 +114,11 @@ procedure GetTBoA(arr: TBoolArray; IDs: TIntegerArray; var output: TBoolArray); 
 var
   i, h, h2, r: Integer;
 begin
+  r := 0;
   h := High(arr);
   h2 := High(IDs);
   if ((h2 > -1) and (h > -1)) then
   begin
-    r := 0;
     SetLength(output, (h2 + 1));
     for i := 0 to h2 do
       if ((IDs[i] <= h) and (IDs[i] > -1)) then
@@ -135,11 +135,11 @@ procedure GetTBA(arr: TBoxArray; IDs: TIntegerArray; var output: TBoxArray); cal
 var
   i, h, h2, r: Integer;
 begin
+  r := 0;
   h := High(arr);
   h2 := High(IDs);
   if ((h2 > -1) and (h > -1)) then
   begin
-    r := 0;
     SetLength(output, (h2 + 1));
     for i := 0 to h2 do
       if ((IDs[i] <= h) and (IDs[i] > -1)) then
@@ -156,11 +156,11 @@ procedure GetATPA(arr: T2DPointArray; IDs: TIntegerArray; var output: T2DPointAr
 var
   i, h, h2, r, a, b: Integer;
 begin
+  r := 0;
   h := High(arr);
   h2 := High(IDs);
   if ((h2 > -1) and (h > -1)) then
   begin
-    r := 0;
     SetLength(output, (h2 + 1));
     for i := 0 to h2 do
       if ((IDs[i] <= h) and (IDs[i] > -1)) then
@@ -180,11 +180,11 @@ procedure GetATIA(arr: T2DIntegerArray; IDs: TIntegerArray; var output: T2DInteg
 var
   i, h, h2, r, a, b: Integer;
 begin
+  r := 0;
   h := High(arr);
   h2 := High(IDs);
   if ((h2 > -1) and (h > -1)) then
   begin
-    r := 0;
     SetLength(output, (h2 + 1));
     for i := 0 to h2 do
       if ((IDs[i] <= h) and (IDs[i] > -1)) then
@@ -204,11 +204,11 @@ procedure GetATEA(arr: T2DExtendedArray; IDs: TIntegerArray; var output: T2DExte
 var
   i, h, h2, r, a, b: Integer;
 begin
+  r := 0;
   h := High(arr);
   h2 := High(IDs);
   if ((h2 > -1) and (h > -1)) then
   begin
-    r := 0;
     SetLength(output, (h2 + 1));
     for i := 0 to h2 do
       if ((IDs[i] <= h) and (IDs[i] > -1)) then
@@ -228,11 +228,11 @@ procedure GetATSA(arr: T2DStringArray; IDs: TIntegerArray; var output: T2DString
 var
   i, h, h2, r, a, b: Integer;
 begin
+  r := 0;
   h := High(arr);
   h2 := High(IDs);
   if ((h2 > -1) and (h > -1)) then
   begin
-    r := 0;
     SetLength(output, (h2 + 1));
     for i := 0 to h2 do
       if ((IDs[i] <= h) and (IDs[i] > -1)) then
@@ -252,11 +252,11 @@ procedure GetATCA(arr: T2DCharArray; IDs: TIntegerArray; var output: T2DCharArra
 var
   i, h, h2, r, a, b: Integer;
 begin
+  r := 0;
   h := High(arr);
   h2 := High(IDs);
   if ((h2 > -1) and (h > -1)) then
   begin
-    r := 0;
     SetLength(output, (h2 + 1));
     for i := 0 to h2 do
       if ((IDs[i] <= h) and (IDs[i] > -1)) then
@@ -276,11 +276,11 @@ procedure GetATBoA(arr: T2DBoolArray; IDs: TIntegerArray; var output: T2DBoolArr
 var
   i, h, h2, r, a, b: Integer;
 begin
+  r := 0;
   h := High(arr);
   h2 := High(IDs);
   if ((h2 > -1) and (h > -1)) then
   begin
-    r := 0;
     SetLength(output, (h2 + 1));
     for i := 0 to h2 do
       if ((IDs[i] <= h) and (IDs[i] > -1)) then
@@ -300,11 +300,11 @@ procedure GetATBA(arr: T2DBoxArray; IDs: TIntegerArray; var output: T2DBoxArray)
 var
   i, h, h2, r, a, b: Integer;
 begin
+  r := 0;
   h := High(arr);
   h2 := High(IDs);
   if ((h2 > -1) and (h > -1)) then
   begin
-    r := 0;
     SetLength(output, (h2 + 1));
     for i := 0 to h2 do
       if ((IDs[i] <= h) and (IDs[i] > -1)) then

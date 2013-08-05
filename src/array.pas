@@ -33,10 +33,10 @@
 {$I array\filteritems.pas}
 {$I array\extractevery.pas}
 {$I array\filterevery.pas}
-{$I array\random.pas}
 {$I array\value.pas}
 {$I array\swap.pas}
 {$I array\merge.pas}
+{$I array\random.pas}
 {$I array\size.pas}
 {$I array\clean.pas}
 
@@ -735,6 +735,55 @@ begin
   AddFunction(@RandomItemTCA, 'function pp_RandomItem(arr: TCharArray): Char; overload;');
   AddFunction(@RandomItemTBoA, 'function pp_RandomItem(arr: TBoolArray): Boolean; overload;');
   AddFunction(@RandomItemTBA, 'function pp_RandomItem(arr: TBoxArray): TBox; overload;');
+  AddFunction(@RandomItemATPA, 'function pp_RandomItem(arr: T2DPointArray): TPoint; overload;');
+  AddFunction(@RandomItemATIA, 'function pp_RandomItem(arr: T2DIntegerArray): Integer; overload;');
+  AddFunction(@RandomItemATEA, 'function pp_RandomItem(arr: T2DExtendedArray): Extended; overload;');
+  AddFunction(@RandomItemATSA, 'function pp_RandomItem(arr: T2DStringArray): string; overload;');
+  AddFunction(@RandomItemATCA, 'function pp_RandomItem(arr: T2DCharArray): Char; overload;');
+  AddFunction(@RandomItemATBoA, 'function pp_RandomItem(arr: T2DBoolArray): Boolean; overload;');
+  AddFunction(@RandomItemATBA, 'function pp_RandomItem(arr: T2DBoxArray): TBox; overload;');
+  AddFunction(@RandomItemsTPA, 'procedure pp_RandomItems(arr: TPointArray; size: Integer; var output: TPointArray);');
+  AddFunction(@RandomItemsTIA, 'procedure pp_RandomItems(arr: TIntegerArray; size: Integer; var output: TIntegerArray); overload;');
+  AddFunction(@RandomItemsTEA, 'procedure pp_RandomItems(arr: TExtendedArray; size: Integer; var output: TExtendedArray); overload;');
+  AddFunction(@RandomItemsTSA, 'procedure pp_RandomItems(arr: TStringArray; size: Integer; var output: TStringArray); overload;');
+  AddFunction(@RandomItemsTCA, 'procedure pp_RandomItems(arr: TCharArray; size: Integer; var output: TCharArray); overload;');
+  AddFunction(@RandomItemsTBoA, 'procedure pp_RandomItems(arr: TBoolArray; size: Integer; var output: TBoolArray); overload;');
+  AddFunction(@RandomItemsTBA, 'procedure pp_RandomItems(arr: TBoxArray; size: Integer; var output: TBoxArray); overload;');
+  AddFunction(@RandomItemsTPAEx, 'procedure pp_RandomItems(arr: TPointArray; size: Integer; duplicates: Boolean; var output: TPointArray); overload;');
+  AddFunction(@RandomItemsTIAEx, 'procedure pp_RandomItems(arr: TIntegerArray; size: Integer; duplicates: Boolean; var output: TIntegerArray); overload;');
+  AddFunction(@RandomItemsTEAEx, 'procedure pp_RandomItems(arr: TExtendedArray; size: Integer; duplicates: Boolean; var output: TExtendedArray); overload;');
+  AddFunction(@RandomItemsTSAEx, 'procedure pp_RandomItems(arr: TStringArray; size: Integer; duplicates: Boolean; var output: TStringArray); overload;');
+  AddFunction(@RandomItemsTCAEx, 'procedure pp_RandomItems(arr: TCharArray; size: Integer; duplicates: Boolean; var output: TCharArray); overload;');
+  AddFunction(@RandomItemsTBoAEx, 'procedure pp_RandomItems(arr: TBoolArray; size: Integer; duplicates: Boolean; var output: TBoolArray); overload;');
+  AddFunction(@RandomItemsTBAEx, 'procedure pp_RandomItems(arr: TBoxArray; size: Integer; duplicates: Boolean; var output: TBoxArray); overload;');
+  AddFunction(@RandomItemsATPA, 'procedure pp_RandomItems(arr: T2DPointArray; size: Integer; var output: TPointArray); overload;');
+  AddFunction(@RandomItemsATIA, 'procedure pp_RandomItems(arr: T2DIntegerArray; size: Integer; var output: TIntegerArray); overload;');
+  AddFunction(@RandomItemsATEA, 'procedure pp_RandomItems(arr: T2DExtendedArray; size: Integer; var output: TExtendedArray); overload;');
+  AddFunction(@RandomItemsATSA, 'procedure pp_RandomItems(arr: T2DStringArray; size: Integer; var output: TStringArray); overload;');
+  AddFunction(@RandomItemsATCA, 'procedure pp_RandomItems(arr: T2DCharArray; size: Integer; var output: TCharArray); overload;');
+  AddFunction(@RandomItemsATBoA, 'procedure pp_RandomItems(arr: T2DBoolArray; size: Integer; var output: TBoolArray); overload;');
+  AddFunction(@RandomItemsATBA, 'procedure pp_RandomItems(arr: T2DBoxArray; size: Integer; var output: TBoxArray); overload;');
+  AddFunction(@RandomItemsATPAEx, 'procedure pp_RandomItems(arr: T2DPointArray; size: Integer; duplicates: Boolean; var output: TPointArray); overload;');
+  AddFunction(@RandomItemsATIAEx, 'procedure pp_RandomItems(arr: T2DIntegerArray; size: Integer; duplicates: Boolean; var output: TIntegerArray); overload;');
+  AddFunction(@RandomItemsATEAEx, 'procedure pp_RandomItems(arr: T2DExtendedArray; size: Integer; duplicates: Boolean; var output: TExtendedArray); overload;');
+  AddFunction(@RandomItemsATSAEx, 'procedure pp_RandomItems(arr: T2DStringArray; size: Integer; duplicates: Boolean; var output: TStringArray); overload;');
+  AddFunction(@RandomItemsATCAEx, 'procedure pp_RandomItems(arr: T2DCharArray; size: Integer; duplicates: Boolean; var output: TCharArray); overload;');
+  AddFunction(@RandomItemsATBoAEx, 'procedure pp_RandomItems(arr: T2DBoolArray; size: Integer; duplicates: Boolean; var output: TBoolArray); overload;');
+  AddFunction(@RandomItemsATBAEx, 'procedure pp_RandomItems(arr: T2DBoxArray; size: Integer; duplicates: Boolean; var output: TBoxArray); overload;');
+  AddFunction(@RandomItemsArrATPA, 'procedure pp_RandomItems(arr: T2DPointArray; size: Integer; var output: T2DPointArray); overload;');
+  AddFunction(@RandomItemsArrATIA, 'procedure pp_RandomItems(arr: T2DIntegerArray; size: Integer; var output: T2DIntegerArray); overload;');
+  AddFunction(@RandomItemsArrATEA, 'procedure pp_RandomItems(arr: T2DExtendedArray; size: Integer; var output: T2DExtendedArray); overload;');
+  AddFunction(@RandomItemsArrATSA, 'procedure pp_RandomItems(arr: T2DStringArray; size: Integer; var output: T2DStringArray); overload;');
+  AddFunction(@RandomItemsArrATCA, 'procedure pp_RandomItems(arr: T2DCharArray; size: Integer; var output: T2DCharArray); overload;');
+  AddFunction(@RandomItemsArrATBoA, 'procedure pp_RandomItems(arr: T2DBoolArray; size: Integer; var output: T2DBoolArray); overload;');
+  AddFunction(@RandomItemsArrATBA, 'procedure pp_RandomItems(arr: T2DBoxArray; size: Integer; var output: T2DBoxArray); overload;');
+  AddFunction(@RandomItemsArrATPAEx, 'procedure pp_RandomItems(arr: T2DPointArray; size: Integer; duplicates: Boolean; var output: T2DPointArray); overload;');
+  AddFunction(@RandomItemsArrATIAEx, 'procedure pp_RandomItems(arr: T2DIntegerArray; size: Integer; duplicates: Boolean; var output: T2DIntegerArray); overload;');
+  AddFunction(@RandomItemsArrATEAEx, 'procedure pp_RandomItems(arr: T2DExtendedArray; size: Integer; duplicates: Boolean; var output: T2DExtendedArray); overload;');
+  AddFunction(@RandomItemsArrATSAEx, 'procedure pp_RandomItems(arr: T2DStringArray; size: Integer; duplicates: Boolean; var output: T2DStringArray); overload;');
+  AddFunction(@RandomItemsArrATCAEx, 'procedure pp_RandomItems(arr: T2DCharArray; size: Integer; duplicates: Boolean; var output: T2DCharArray); overload;');
+  AddFunction(@RandomItemsArrATBoAEx, 'procedure pp_RandomItems(arr: T2DBoolArray; size: Integer; duplicates: Boolean; var output: T2DBoolArray); overload;');
+  AddFunction(@RandomItemsArrATBAEx, 'procedure pp_RandomItems(arr: T2DBoxArray; size: Integer; duplicates: Boolean; var output: T2DBoxArray); overload;');
   // value
   AddFunction(@BuiltWithTPA, 'function pp_BuiltWith(arr, allowed: TPointArray): Boolean;');
   AddFunction(@BuiltWithTIA, 'function pp_BuiltWith(arr, allowed: TIntegerArray): Boolean; overload;');
